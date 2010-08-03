@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>	
+	<string name="locale_disabled">забранено</string>
+	<string name="locale_help">Помощ</string>
+	<string name="locale_save">Запаметяване</string>
+	<string name="locale_dontsave">Не запаметявай</string>
+
+	<string name="preference_cutName_summaryOn">Прочети името до първото разстояние</string>
+	<string name="preference_cutName_summaryOff">Прочети цялото име</string>
+        
+    
+	<string name="preference_cutNameAfterSpecialCharacter_summaryOff">Чети цялото име</string>
+        
+	<string name="preference_specialCharacters_title">Специални знаци</string>
+    
+	
+	<string name="preference_smsRead_summaryOn">Чети съдържанието на SMS-ите</string>
+	
+	<string name="preference_translate_title">Преведи ме</string>
+	
+	<string name="preference_ringtone_toast_finished">Звъненето е заглушено</string>
+	
+	<string name="preference_trouble_summary">Имате проблем? Моля прочетете това</string>
+	
+	<string name="preference_problem_title">Връзка с мен</string>
+	
+	<string name="preference_blog_title">Блог</string>
+	<string name="preference_blog_summary">Четете блога ми за повече информация</string>
+	
+	<string name="preference_donate_toast">Благодаря много ;]</string>
+</resources>

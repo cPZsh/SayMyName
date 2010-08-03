@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<CheckBoxPreference android:key="saysomething"
+		android:defaultValue="true" android:title="@string/preference_saymyname_title" />
+
+	<CheckBoxPreference android:key="respectSilent"
+		android:defaultValue="true" android:title="respect silent"
+		android:summary="respect silent" android:dependency="saysomething" />
+
+	<org.mailboxer.saymyname.utils.SeekBarPreference
+		android:key="volume" android:title="volume" android:summary="volume"
+		android:defaultValue="20" android:dependency="saysomething" />
+
+	<CheckBoxPreference android:key="showSilenceScreen"
+		android:defaultValue="false" android:title="@string/preference_showSilenceScreen_title"
+		android:summary="@string/preference_showSilenceScreen_summary"
+		android:dependency="saysomething" />
+
+	<CheckBoxPreference android:key="cutName"
+		android:defaultValue="true" android:title="@string/preference_cutName_title"
+		android:summaryOn="@string/preference_cutName_summaryOn"
+		android:summaryOff="@string/preference_cutName_summaryOff"
+		android:dependency="saysomething" />
+
+	<CheckBoxPreference android:key="cutNameAfterSpecialCharacters"
+		android:defaultValue="false"
+		android:summaryOff="@string/preference_cutNameAfterSpecialCharacter_summaryOff"
+		android:summaryOn="@string/preference_cutNameAfterSpecialCharacter_summaryOn"
+		android:title="@string/preference_cutNameAfterSpecialCharacter_title"
+		android:dependency="saysomething">
+	</CheckBoxPreference>
+
+	<EditTextPreference android:key="specialCharacters"
+		android:defaultValue=":/-(" android:persistent="true"
+		android:title="@string/preference_specialCharacters_title"
+		android:summary="@string/preference_specialCharacters_summary"
+		android:dependency="saysomething">
+	</EditTextPreference>
+
+	<CheckBoxPreference android:key="discreet"
+		android:defaultValue="false" android:title="@string/preference_discreetMode_title"
+		android:summaryOn="@string/preference_discreetMode_summaryOn"
+		android:summaryOff="@string/preference_discreetMode_summaryOff"
+		android:dependency="saysomething" />
+
+	<CheckBoxPreference android:key="readUnknown"
+		android:defaultValue="true" android:title="@string/preference_readUnknown_title"
+		android:summaryOn="@string/preference_readUnknown_summaryOn"
+		android:summaryOff="@string/preference_readUnknown_summaryOff"
+		android:dependency="saysomething" />
+
+	<CheckBoxPreference android:key="readNumber"
+		android:defaultValue="false" android:title="@string/preference_readNumber_title"
+		android:summaryOn="@string/preference_readNumber_summaryOn"
+		android:summaryOff="@string/preference_readNumber_summaryOff"
+		android:dependency="saysomething" />
+
+	<CheckBoxPreference android:key="transliterate"
+		android:summary="@string/preference_transliterate_summary"
+		android:title="@string/preference_transliterate_title"
+		android:dependency="saysomething" />
+
+	<CheckBoxPreference android:key="ringtone"
+		android:title="@string/preference_ringtone_title" android:summaryOn="@string/preference_ringtone_summaryOn"
+		android:summaryOff="@string/preference_ringtone_summaryOff" />
+
+	<PreferenceCategory android:title="@string/preference_saycaller_title"
+		android:dependency="saysomething">
+		<CheckBoxPreference android:key="saycaller"
+			android:defaultValue="true" android:title="@string/preference_saycaller_title"
+			android:dependency="saysomething" />
+
+		<PreferenceScreen android:title="@string/preference_saycaller_settings_title"
+			android:dependency="saycaller">
+			<EditTextPreference android:key="callerRepeatSeconds"
+				android:defaultValue="2" android:title="@string/preference_callerRepeatSeconds_title"
+				android:summary="@string/preference_callerRepeatSeconds_summary"
+				android:numeric="integer" android:persistent="true" />
+
+			<EditTextPreference android:key="callerRepeatTimes"
+				android:defaultValue="6" android:title="@string/preference_callerRepeatTimes_title"
+				android:summary="@string/preference_callerRepeatTimes_summary"
+				android:numeric="integer" android:persistent="true" />
+
+			<EditTextPreference android:key="callerFormat"
+				android:defaultValue="%" android:title="@string/preference_callerFormat_title"
+				android:summary="@string/preference_callerFormat_summary"
+				android:dialogTitle="@string/preference_callerFormat_title"
+				android:dialogMessage="@string/preference_callerFormat_dialog" />
+		</PreferenceScreen>
+	</PreferenceCategory>
+
+	<PreferenceCategory android:title="@string/preference_saysms_title"
+		android:dependency="saysomething">
+		<CheckBoxPreference android:key="saysms"
+			android:defaultValue="true" android:title="@string/preference_saysms_title"
+			android:dependency="saysomething" />
+
+		<PreferenceScreen android:title="@string/preference_saysms_settings_title"
+			android:dependency="saysms">
+			<EditTextPreference android:key="smsReadDelay"
+				android:defaultValue="2" android:title="@string/preference_smsReadDelay_title"
+				android:summary="@string/preference_smsReadDelay_summary"
+				android:numeric="integer" android:persistent="true" />
+
+			<CheckBoxPreference android:key="smsRead"
+				android:title="@string/preference_smsRead_title" android:summaryOn="@string/preference_smsRead_summaryOn"
+				android:summaryOff="@string/preference_smsRead_summaryOff" />
+
+			<EditTextPreference android:key="smsFormat"
+				android:defaultValue="%" android:title="@string/preference_smsFormat_title"
+				android:summary="@string/preference_smsFormat_summary"
+				android:dialogTitle="@string/preference_smsFormat_title"
+				android:dialogMessage="@string/preference_smsFormat_dialog" />
+		</PreferenceScreen>
+	</PreferenceCategory>
+
+	<PreferenceCategory android:title="@string/preference_sayemail_title"
+		android:dependency="saysomething">
+		<CheckBoxPreference android:key="sayemail"
+			android:defaultValue="true" android:title="@string/preference_sayemail_title"
+			android:dependency="saysomething" />
+
+		<EditTextPreference android:key="emailAddress"
+			android:defaultValue="XXX@gmail.com" android:title="@string/preference_emailAddress_title"
+			android:summary="@string/preference_emailAddress_summary"
+			android:persistent="true" />
+
+		<PreferenceScreen android:title="@string/preference_sayemail_settings_title"
+			android:dependency="sayemail">
+
+			<EditTextPreference android:key="emailReadDelay"
+				android:defaultValue="2" android:title="@string/preference_emailReadDelay_title"
+				android:summary="@string/preference_emailReadDelay_summary"
+				android:numeric="integer" android:persistent="true" />
+
+			<CheckBoxPreference android:key="emailReadSubject"
+				android:title="@string/preference_emailReadSubject_title"
+				android:summaryOn="@string/preference_emailReadSubject_summaryOn"
+				android:summaryOff="@string/preference_emailReadSubject_summaryOff" />
+
+			<EditTextPreference android:key="emailFormat"
+				android:defaultValue="%" android:title="@string/preference_emailFormat_title"
+				android:summary="@string/preference_emailFormat_summary"
+				android:dialogTitle="@string/preference_emailFormat_title"
+				android:dialogMessage="@string/preference_emailFormat_dialog" />
+		</PreferenceScreen>
+	</PreferenceCategory>
+
+	<PreferenceCategory android:title="@string/preference_external_title"
+		android:dependency="saysomething">
+		<Preference android:key="tts" android:title="@string/preference_tts_title" />
+
+		<Preference android:key="ringdroid"
+			android:title="@string/preference_ringdroid_title" android:summary="@string/preference_ringdroid_summary" />
+
+		<Preference android:key="locale" android:title="@string/preference_locale_title"
+			android:summary="@string/preference_locale_summary" />
+
+		<Preference android:key="contactChooser"
+			android:title="@string/preference_contactChooser_title"
+			android:summary="@string/preference_contactChooser_summary" />
+	</PreferenceCategory>
+
+	<PreferenceCategory android:title="@string/preference_trouble_title">
+		<Preference android:key="trouble" android:title="@string/preference_trouble_title" />
+
+		<Preference android:key="twitter" android:title="@string/preference_twitter_title" />
+
+		<Preference android:key="translate"
+			android:title="@string/preference_translate_title" />
+
+		<Preference android:key="blog" android:title="@string/preference_blog_title" />
+
+		<Preference android:key="donate" android:title="@string/preference_donate_title" />
+	</PreferenceCategory>
+</PreferenceScreen>

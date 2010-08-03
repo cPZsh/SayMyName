@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>	
+	<string name="caller_unknown">неизвестно</string>
+	
+	<string name="locale_text">Измените поведение приложения время/повторы</string>
+	<string name="locale_enabled">включен</string>
+	<string name="locale_disabled">выключен</string>
+	<string name="locale_saycaller_enable">Включить на звонящего</string>
+	<string name="locale_saysms_enable">Включить на SMS</string>
+	<string name="locale_sayemail_enable">Включить на E-mail</string>
+
+	<string name="locale_help">Помощь</string>
+	<string name="locale_save">Сохранить</string>
+	<string name="locale_dontsave">Не сохранять</string>
+
+	<string name="tts_check_toast">TTS установлен! Всё должно работать :)</string>
+	
+	<string name="preference_saymyname_title">SayMyName</string>
+	<string name="preference_saymyname_summaryOn">SayMyName включен</string>
+	<string name="preference_saymyname_summaryOff">SayMyName выключен</string>
+	
+	<string name="preference_cutName_title">Обрезать имя (по пробелу)</string>
+    <string name="preference_cutName_summaryOn">Читать имя до первого пробела</string>
+    <string name="preference_cutName_summaryOff">Читать всё имя</string>
+        
+    <string name="preference_cutNameAfterSpecialCharacter_title">Обрезать имя (спец. символ)</string>
+    <string name="preference_cutNameAfterSpecialCharacter_summaryOn">Читать имя до первого спец. символа</string>
+    <string name="preference_cutNameAfterSpecialCharacter_summaryOff">Читать всё имя</string>
+        
+    <string name="preference_specialCharacters_title">Спец. символы</string>
+    <string name="preference_specialCharacters_summary">После какого символа я должен обрезать имя? по умолчанию :/-(</string>
+	
+	<string name="preference_useOldMethod_title">Способ чтения 2</string>
+	<string name="preference_useOldMethod_summaryOn">Если Вы не слышите имени звонящего - выключите эту опцию</string>
+	<string name="preference_useOldMethod_summaryOff">Меняйте эту настройку только если Вы не слишите имени звонящего</string>
+	
+	<string name="preference_discreetMode_title">Тактичный режим</string>
+	<string name="preference_discreetMode_summaryOn">Говорить только в наушниках</string>
+	<string name="preference_discreetMode_summaryOff">Говорить даже если динамик телефона включен</string>
+	
+	<string name="preference_saycaller_title">Объявление звонящего</string>
+	<string name="preference_saycaller_summaryOn">Я объявлю звонящего</string>
+	<string name="preference_saycaller_summaryOff">Я не объявлю звонящего</string>
+	
+	<string name="preference_saycaller_settings_title">Настройки на звонящего</string>
+	<string name="preference_saycaller_settings_summary">Изменить!</string>
+	
+	<string name="preference_callerRepeatSeconds_title">Задержка повтора</string>
+	<string name="preference_callerRepeatSeconds_summary">Задайте задержку между повторами</string>
+	
+	<string name="preference_callerRepeatTimes_title">Повтор имени</string>
+	<string name="preference_callerRepeatTimes_summary">Как часто я должен повторять имя</string>
+	
+	<string name="preference_callerFormat_title">Формат объявления</string>
+	<string name="preference_callerFormat_summary">Настройте текст объявления</string>
+	<string name="preference_callerFormat_dialog">% - имя \nпример: % звонит</string>
+	
+	<string name="preference_saysms_title">Объявление SMS</string>
+	<string name="preference_saysms_summary">Включить объявление SMS</string>
+	
+	<string name="preference_saysms_settings_title">Настройки на SMS</string>
+	<string name="preference_saysms_settings_summary">Изменить!</string>
+	
+	<string name="preference_smsReadDelay_title">Задержка повтора</string>
+	<string name="preference_smsReadDelay_summary">Задайте задержку между повторами</string>
+	
+	<string name="preference_smsFormat_title">Формат объявления</string>
+	<string name="preference_smsFormat_summary">Настройте текст объявления</string>
+	<string name="preference_smsFormat_dialog">% - имя \nпример: % пишет</string>
+	
+	<string name="preference_smsRead_title">Чтение SMS</string>
+	<string name="preference_smsRead_summaryOn">Читать содержание SMS</string>
+	<string name="preference_smsRead_summaryOff">Не читать содержание SMS</string>
+	
+	<string name="preference_smsRepeatTimes_title">Повторять SMS</string>
+	<string name="preference_smsRepeatTimes_summary">Как часто я должен повторять SMS?</string>
+	
+	<string name="preference_smsReadDiscreet_title">Читать содержание SMS тактично</string>
+	<string name="preference_smsReadDiscreet_summaryOn">Читать содержание SMS только в тактичном режиме</string>
+	<string name="preference_smsReadDiscreet_summaryOff">Также читать содержимое SMS в не тактичном режиме</string>
+	
+	<string name="preference_sayemail_title">Объявление почты</string>
+	<string name="preference_sayemail_summary">Включить объявление почты</string>
+	<string name="preference_sayemail_settings_title">Настройки объявления почты</string>
+	<string name="preference_sayemail_settings_summary">Изменить!</string>
+	<string name="preference_emailReadDelay_title">Задержка чтения темы письма</string>
+	<string name="preference_emailReadDelay_summary">Задайте задержку между повторами темы письма</string>
+	<string name="preference_emailFormat_title">Формат объявления</string>
+	<string name="preference_emailFormat_summary">Настройте текст объявления</string>
+	<string name="preference_emailFormat_dialog">% - отправитель</string>
+	<string name="preference_emailCutReFwd_title">Сокращать Re: и Fwd:</string>
+	<string name="preference_emailCutReFwd_summaryOn">Вырезать Re:, Fwd: </string>
+	<string name="preference_emailCutReFwd_summaryOff">Оставить только Re:, Fwd: </string>
+	
+	<string name="preference_emailReadSubject_title">Читать тему письма</string>
+	<string name="preference_emailReadSubject_summaryOn">Читать тему письма</string>
+	<string name="preference_emailReadSubject_summaryOff">Не читать тему письма</string>
+	
+	<string name="preference_emailRepeatTimes_title">Повтор темы письма</string>
+	<string name="preference_emailRepeatTimes_summary">Как часто я должен повторять тему письма?</string>
+	
+	<string name="preference_emailReadSubjectDiscreet_title">Читать тему письма тактично</string>
+	<string name="preference_emailReadSubjectDiscreet_summaryOn">Читать тему письма только в тактичном режиме</string>
+	<string name="preference_emailReadSubjectDiscreet_summaryOff">Также читать тему письма в не тактичном режиме</string>
+	
+	<string name="preference_emailHelp_title">Помощь: как установить</string>
+	<string name="preference_emailHelp_summary">Как установить K-9 Mail и SayMyName</string>
+	<string name="preference_emailHelpDialog_title">Как установить K-9 Mail</string>
+	<string name="preference_emailHelpDialog_text">Почему так сложно?\n\n Изначально приложение GMail не объявляет информацию о пришедшей почте, но с последнего обновления K-9 Mail делает это, и мы можем поймать это объявление и использовать TTS чтобы объявить отправителя почты и тему письма. У Вас есть две возможности: 1) Использовать K-9 Mail как Ваш основной почтовый клиент: скачайте, установите и настройте K-9 Mail - отключите уведомления в приложении GMail - SayMyName должен работать. 2) Оставайтесь с приложением GMail и используйте K-9 Mail только как прокси: - скачайте, установите и настройте K-9 Mail - отключите уведомления в K-9 Mail (он всё равно будет уведомлять систему о новой почте) - SayMyName будет работать Если Вы оставите уведомления и в GMail и в K-9 Mail ничего страшного не произойдёт. Просто Вы будете получать 2 уведомления о каждом письме. Примечание: Вам понадобится ввести Ваш пароль от почтового ящика в K-9 Mail.</string>
+	
+	<string name="preference_external_title">Внешние настройки</string>
+	
+	<string name="preference_translate_title">Переведите меня</string>
+	<string name="preference_translate_summary">Не нравится текущий перевод? Измените его здесь</string>
+	
+	<string name="preference_ringtone_toast_finished">Рингтон отключен</string>
+	
+	<string name="preference_tts_title">TTS (текст в голос)</string>
+	<string name="preference_tts_toast">Листайте вниз к Голосовому синтезатору</string>
+	
+	<string name="preference_ringdroid_title">Ringdroid</string>
+	<string name="preference_ringdroid_summary">Измените Ваш рингтон с Ringdroid</string>
+	
+	<string name="preference_locale_title">Locale</string>
+	<string name="preference_locale_summary">Использовать Locale для управления мной</string>
+	
+	<string name="preference_contactChooser_title">Определение контактов</string>
+	<string name="preference_contactChooser_summary">Не хотите чтоб я читал некоторые контакты? Выберите их здесь</string>
+	
+	<string name="preference_trouble_title">Разрешение проблем</string>
+	<string name="preference_trouble_summary">Возникли проблемы? Прочитайте это</string>
+	
+	<string name="preference_problem_title">Связаться со мной</string>
+	<string name="preference_problem_summary">Разрешение проблем не разрешило Вашу проблему? Свяжитесь со мной :)</string>
+	<string name="preference_problem_toast">Пожалуйста, опишите проблему. Спасибо за Ваше сообщение :)</string>
+	
+	<string name="preference_blog_title">Блог</string>
+	<string name="preference_blog_summary">Читайте мой блог чтобы лучше узнать программу</string>
+	
+	<string name="preference_donate_title">Поддержите меня :D</string>
+	<string name="preference_donate_summary">Если Вам нравится, что я делаю, пожалуйста купите SayMyName Donate</string>
+	<string name="preference_donate_toast">Огромное спасибо! :)</string>
+</resources>

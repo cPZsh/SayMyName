@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:title="@string/locale_help" android:icon="@drawable/locale_icon_help_color_40"
+		android:id="@+id/menu_help" />
+
+	<item android:title="@string/locale_dontsave" android:icon="@drawable/locale_icon_dontsave_color_40"
+		android:id="@+id/menu_dontsave" />
+
+	<item android:title="@string/locale_save" android:icon="@drawable/locale_icon_save_color_40"
+		android:id="@+id/menu_save" />
+</menu>

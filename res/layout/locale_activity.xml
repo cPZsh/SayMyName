@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res/org.mailboxer.samyname"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="wrap_content">
+	<!--
+		Optional how to instructions. For examples, see the Contact condition
+		or the Defaults screen.
+	-->
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:gravity="center"
+		android:layout_marginTop="5px" android:text="@string/locale_text"
+		android:textSize="15sp" />
+	<!--
+		Optional display of status. For examples, see Time condition, Display
+		setting, or Volume setting
+	-->
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:padding="5px"
+		android:gravity="center" android:textSize="17sp" android:textColor="@android:color/black" />
+	<!--
+		The setting controls are placed within a double-bordered white frame.
+	-->
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="fill_parent" android:background="@drawable/locale_border"
+		android:orientation="vertical" android:layout_weight="1"
+		android:layout_margin="5px" android:padding="20px">
+		<!-- Your UI controls go here -->
+
+
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:orientation="horizontal">
+			<TextView android:text="@string/locale_saycaller_enable"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:textColor="@android:color/black" android:textSize="18sp" />
+
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:layout_weight="1" />
+
+			<CheckBox android:id="@+id/enableCallerCheck"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		</LinearLayout>
+
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:orientation="horizontal">
+			<TextView android:text="@string/locale_saysms_enable"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:textColor="@android:color/black" android:textSize="18sp" />
+
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:layout_weight="1" />
+
+			<CheckBox android:id="@+id/enableSMSCheck"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		</LinearLayout>
+
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:orientation="horizontal">
+			<TextView android:text="@string/locale_sayemail_enable"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:textColor="@android:color/black" android:textSize="18sp" />
+
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:layout_weight="1" />
+
+			<CheckBox android:id="@+id/enableEMailCheck"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		</LinearLayout>
+
+	</LinearLayout>
+
+	<!--
+		Any status, such as characters remaining, is displayed at the bottom
+	-->
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:layout_marginBottom="5px"
+		android:layout_gravity="center" android:textSize="15sp" />
+</LinearLayout>

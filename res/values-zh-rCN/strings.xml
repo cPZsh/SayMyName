@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">SayMyName Dessert</string>
+	
+	<string name="caller_unknown">未知</string>
+	
+	<string name="locale_text">變更SayMyName在這個地點 / 時間的行為</string>
+	<string name="locale_enabled">啟用</string>
+	<string name="locale_disabled">禁用</string>
+	<string name="locale_saycaller_enable">啟用 SayCaller</string>
+	<string name="locale_saysms_enable">啟用 SaySMS</string>
+	<string name="locale_sayemail_enable">啟用 SayEMail</string>
+
+	<string name="locale_help">說明</string>
+	<string name="locale_save">儲存</string>
+	<string name="locale_dontsave">不儲存</string>
+
+	<string name="tts_check_toast">TTS 已安裝！現在所有的功能應該都能正常運作了 :)</string>
+	
+	<string name="preference_saymyname_title">SayMyName</string>
+	<string name="preference_saymyname_summaryOn">SayMyName 啟用中</string>
+	<string name="preference_saymyname_summaryOff">SayMyName 已禁用</string>
+	
+	<string name="preference_cutName_title">分割姓名(空格)</string>
+    <string name="preference_cutName_summaryOn">僅念姓名第一個空格前的部份</string>
+    <string name="preference_cutName_summaryOff">念出完整的姓名</string>
+        
+    <string name="preference_cutNameAfterSpecialCharacter_title">分割姓名(特殊符)</string>
+    <string name="preference_cutNameAfterSpecialCharacter_summaryOn">僅念姓名第一個特殊符前的部份</string>
+    <string name="preference_cutNameAfterSpecialCharacter_summaryOff">念出完整的姓名</string>
+        
+    <string name="preference_specialCharacters_title">特殊字元</string>
+    <string name="preference_specialCharacters_summary">我應該在下面哪個特殊符後分割姓名？預設 :/-(</string>
+	
+	<string name="preference_readUnknown_title">念出未知來電</string>
+	<string name="preference_readUnknown_summaryOn">僅念出那些不存在於位址薄中的未知號碼</string>
+	<string name="preference_readUnknown_summaryOff">念出那些任何訊息都不存在於位址薄中的未知號碼</string>
+	
+	<string name="preference_readNumber_title">念号码</string>
+	<string name="preference_readNumber_summaryOn">对于来电号码不是保存在通讯录中的报出整个号码</string>
+	<string name="preference_readNumber_summaryOff">如果来电号码不是保存在通讯录中的则报"未知"</string>
+
+	<string name="preference_discreetMode_title">謹慎模式</string>
+	<string name="preference_discreetMode_summaryOn">僅在使用耳機時念名</string>
+	<string name="preference_discreetMode_summaryOff">當使用外置喇叭時也念名</string>
+	
+	<string name="preference_saycaller_title">SayCaller</string>
+	<string name="preference_saycaller_summaryOn">由我來廣播來電</string>
+	<string name="preference_saycaller_summaryOff">不需要我來廣播來電</string>
+	
+	<string name="preference_saycaller_settings_title">SayCaller 設定</string>
+	<string name="preference_saycaller_settings_summary">自訂它！</string>
+	
+	<string name="preference_callerRepeatSeconds_title">重複逾時</string>
+	<string name="preference_callerRepeatSeconds_summary">設定念名字的逾時</string>
+	
+	<string name="preference_callerRepeatTimes_title">重複念名字</string>
+	<string name="preference_callerRepeatTimes_summary">每次重複念名字之間應該相隔多久？</string>
+	
+	<string name="preference_callerFormat_title">格式化字串</string>
+	<string name="preference_callerFormat_summary">自訂通知</string>
+	<string name="preference_callerFormat_dialog">% 為名字， &amp; 為類型 \n例如: % 要求在 &amp;</string>
+	
+	<string name="preference_saysms_title">SaySMS</string>
+	<string name="preference_saysms_summary">啟用 SaySMS</string>
+	
+	<string name="preference_saysms_settings_title">SaySMS 設定</string>
+	<string name="preference_saysms_settings_summary">自訂它！</string>
+	
+	<string name="preference_smsReadDelay_title">念出延遲</string>
+	<string name="preference_smsReadDelay_summary">設定念名逾時</string>
+	
+	<string name="preference_smsFormat_title">格式化字串</string>
+	<string name="preference_smsFormat_summary">自訂通知</string>
+	<string name="preference_smsFormat_dialog">% 為名字， &amp; 為類型 \n例如: % 接收來自 &amp;</string>
+	
+	<string name="preference_smsRead_title">念短信</string>
+	<string name="preference_smsRead_summaryOn">念出短信內容</string>
+	<string name="preference_smsRead_summaryOff">不念出短信內容</string>
+	
+	<string name="preference_smsRepeatTimes_title">重複念短信</string>
+	<string name="preference_smsRepeatTimes_summary">每次重複念短信應該相隔多久？</string>
+	
+	<string name="preference_smsReadDiscreet_title">謹慎的念出短信內容</string>
+	<string name="preference_smsReadDiscreet_summaryOn">僅當為謹慎模式時才念出短信內容</string>
+	<string name="preference_smsReadDiscreet_summaryOff">不是謹慎模式也念出短信內容</string>
+	
+	<string name="preference_sayemail_title">SayEMail</string>
+	<string name="preference_sayemail_summary">啟用 SayEMail</string>
+	<string name="preference_sayemail_settings_title">SayEMail 設定</string>
+	<string name="preference_sayemail_settings_summary">自訂它！</string>
+	<string name="preference_emailReadDelay_title">念主題的延遲</string>
+	<string name="preference_emailReadDelay_summary">設定念傳送者和主題的延遲</string>
+	<string name="preference_emailFormat_title">格式化字串</string>
+	<string name="preference_emailFormat_summary">自訂通知</string>
+	<string name="preference_emailFormat_dialog">% 為傳送者</string>
+	<string name="preference_emailCutReFwd_title">分割 回復: 和 轉發:</string>
+	<string name="preference_emailCutReFwd_summaryOn">分割 回復: 轉發: 出</string>
+	<string name="preference_emailCutReFwd_summaryOff">准許 回復:, 轉發: 單獨</string>
+	
+	<string name="preference_emailReadSubject_title">念Email</string>
+	<string name="preference_emailReadSubject_summaryOn">念出Email主題</string>
+	<string name="preference_emailReadSubject_summaryOff">不要念出Email主題</string>
+	
+	<string name="preference_emailRepeatTimes_title">重複念出Email主題</string>
+	<string name="preference_emailRepeatTimes_summary">每次重複念Email主題之間應該相隔多久？</string>
+	
+	<string name="preference_emailReadSubjectDiscreet_title">謹慎的念出主題</string>
+	<string name="preference_emailReadSubjectDiscreet_summaryOn">僅當為謹慎模式時才念出主題</string>
+	<string name="preference_emailReadSubjectDiscreet_summaryOff">不是謹慎模式也念出主題</string>
+	
+	<string name="preference_emailHelp_title">說明: 如何設定</string>
+	<string name="preference_emailHelp_summary">如何設定 K-9 郵箱和 SayMyName...</string>
+	<string name="preference_emailHelpDialog_title">如何設定 K-9 郵箱</string>
+	<string name="preference_emailHelpDialog_text">
+為什麼搞的這麼複雜？\n\n
+
+
+在Gmail的基本套用程式上並沒有一個能廣播新郵件訊息的，但是經過上次升級後的K-9郵箱就可以做到了，而且我們可以捕捉到諸如此類別的並用TTS來念出Email的傳送者和主題。
+
+您有兩種選取:
+
+1) 使用K-9郵件作為您的主要電子郵箱用戶端:
+    - 下載，安裝以及設定K-9郵箱
+    - 在GMail程式中禁用通知
+    - SayMyName將執行良好
+
+2) 依然使用GMail程式同時使用K-9郵箱作為代理:
+    - d下載，安裝以及設定K-9郵箱
+    - 在K-9郵箱中禁用通知(它會廣播關於新郵件的訊息)
+    - SayMyName將執行良好
+
+當然您離開了GMail和K-9的通知也不會有什麼大不了的問題。您可以簡單的得到兩個郵箱的每個郵件通知。
+
+注意: 您應該為您的K-9郵箱設定密碼，原因是眾所周知的。</string>
+	
+	<string name="preference_external_title">附加工具</string>
+	
+	<string name="preference_translate_title">幫忙翻譯</string>
+	<string name="preference_translate_summary">不喜歡現在顯示的字串？在這變更它們</string>
+	
+	<string name="preference_ringtone_toast_finished">鈴聲現在是無聲的了</string>
+	
+	<string name="preference_tts_title">TTS</string>
+	<string name="preference_tts_toast">導航至底部以語音合成</string>
+	
+	<string name="preference_ringdroid_title">Ringdroid</string>
+	<string name="preference_ringdroid_summary">用Ringdroid定制您的鈴聲</string>
+	
+	<string name="preference_locale_title">區域設定</string>
+	<string name="preference_locale_summary">使用區域設定來控制我</string>
+	
+	<string name="preference_contactChooser_title">聯繫人選取器</string>
+	<string name="preference_contactChooser_summary">不想讓我讀取指定聯繫人的名字？在這裡選出他</string>
+	
+	<string name="preference_trouble_title">疑難排解</string>
+	<string name="preference_trouble_summary">有問題？請看看這個</string>
+	
+	<string name="preference_problem_title">聯繫我</string>
+	<string name="preference_problem_summary">疑難排解未能幫您解決問題？聯繫我 :)</string>
+	<string name="preference_problem_toast">請描述您您問題。感謝您的反饋 :)</string>
+	
+	<string name="preference_blog_title">博客</string>
+	<string name="preference_blog_summary">瀏覽我的博客瞭解更多訊息</string>
+	
+	<string name="preference_donate_title">支援我 :D</string>
+	<string name="preference_donate_summary">如果您喜歡我所做的，請捐贈SayMyName</string>
+	<string name="preference_donate_toast">多謝了 :)</string>
+</resources>
