@@ -7,6 +7,7 @@ import org.mailboxer.saymyname.utils.RingtoneTimer;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.tts.TTS;
 
@@ -28,6 +29,8 @@ public class Speaker {
 					e.printStackTrace();
 
 					service.stopService(new Intent(service, ManagerService.class));
+
+					Toast.makeText(service, "please open SayMyName", Toast.LENGTH_LONG).show();
 				}
 			}
 		}.start();

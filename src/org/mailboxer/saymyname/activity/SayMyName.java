@@ -14,9 +14,11 @@ import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
@@ -33,6 +35,7 @@ import android.provider.MediaStore.Audio.Media;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.google.tts.ConfigurationManager;
 import com.google.tts.TTS;
 import com.google.tts.TTS.InitListener;
 
@@ -51,6 +54,32 @@ public class SayMyName extends PreferenceActivity {
 		getPreferenceManager().setSharedPreferencesName(Settings.SHARED_PREFERENCES);
 		addPreferencesFromResource(R.xml.preferences);
 		shared = getPreferenceManager().getSharedPreferences();
+
+		try {
+			createPackageContext("com.google.tts", 0);
+
+			if (!ConfigurationManager.allFilesExist()) {
+				final Context myContext = createPackageContext("com.google.tts", Context.CONTEXT_INCLUDE_CODE | Context.CONTEXT_IGNORE_SECURITY);
+				Class<?> appClass;
+				try {
+					appClass = myContext.getClassLoader().loadClass("com.google.tts.ConfigurationManager");
+
+					startActivity(new Intent(myContext, appClass));
+
+					finish();
+					return;
+				} catch (final ClassNotFoundException e) {
+					e.printStackTrace();
+				}
+			}
+		} catch (final NameNotFoundException e) {
+			final Uri marketUri = Uri.parse("market://search?q=pname:com.google.tts");
+			final Intent marketIntent = new Intent(Intent.ACTION_VIEW, marketUri);
+			startActivity(marketIntent);
+
+			finish();
+			return;
+		}
 
 		showDonateDialog();
 

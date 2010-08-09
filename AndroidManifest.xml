@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="org.mailboxer.saymyname" android:versionCode="68"
-	android:versionName="2.2.6.3 (ALPHA-BETA-GAMMA, new contacts-system, new speaker-system, speech-delay, fix ringtones, hide donate, fix gmail, new icon)">
+	package="org.mailboxer.saymyname" android:versionCode="69"
+	android:versionName="2.2.6.4 (ALPHA-BETA-GAMMA, new contacts-system, new speaker-system, speech-delay, fix ringtones, hide donate, fix gmail, new icon)">
 
 	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
 	<uses-permission android:name="android.permission.READ_CONTACTS" />
