@@ -1,6 +1,6 @@
 package org.mailboxer.saymyname.tts;
 
-import org.mailboxer.saymyname.receiver.HeadsetReceiver;
+import org.mailboxer.saymyname.prepare.Prepare;
 import org.mailboxer.saymyname.service.ManagerService;
 import org.mailboxer.saymyname.utils.RingtoneTimer;
 
@@ -12,11 +12,11 @@ import com.google.tts.TTS;
 
 @SuppressWarnings("deprecation")
 public class Speaker {
-	private final Context context;
 	private TTS speaker;
-	private final String[] queue;
+	private Thread sleepThread;
+	private final Context context;
 	private final RingtoneTimer timer;
-	private final boolean discreet;
+	private final String[] queue;
 
 	public Speaker(final ManagerService service, final String[] queue, final RingtoneTimer timer, final boolean discreet) {
 		new Thread() {
@@ -35,7 +35,6 @@ public class Speaker {
 		context = service;
 		this.queue = queue;
 		this.timer = timer;
-		this.discreet = discreet;
 	}
 
 	public void start() {
@@ -43,27 +42,39 @@ public class Speaker {
 			context.stopService(new Intent(context, ManagerService.class));
 			return;
 		}
-		if (discreet && HeadsetReceiver.state == HeadsetReceiver.STATE_UNPLUGGED) {
-			context.stopService(new Intent(context, ManagerService.class));
-			return;
-		}
 
 		speaker.setSpeechRate(100);
 		speaker.setOnSpeechCompletedListener(new RepeatedSpeechListener(this, context, queue, timer));
-		speak(queue[0]);
+
+		final int sleep = Integer.parseInt(queue[0].substring(Prepare.DELAY.length()));
+		if (queue[0].startsWith(Prepare.DELAY) && sleep > 0) {
+			sleepThread = new Thread() {
+				@Override
+				public void run() {
+					try {
+						sleep(sleep);
+
+						speak(queue[1]);
+					} catch (final InterruptedException e) {}
+				};
+			};
+			sleepThread.start();
+		} else {
+			speak(queue[1]);
+		}
 	}
 
 	public void speak(final String text) {
-		if (discreet && HeadsetReceiver.state == HeadsetReceiver.STATE_UNPLUGGED) {
-			context.stopService(new Intent(context, ManagerService.class));
-			return;
-		}
-
 		speaker.speak(text, 0, null);
 	}
 
 	public void stop() {
 		Log.e("smn", "stop speaker");
+
+		if (sleepThread != null) {
+			sleepThread.interrupt();
+		}
+
 		if (speaker != null) {
 			speaker.stop();
 			speaker.shutdown();

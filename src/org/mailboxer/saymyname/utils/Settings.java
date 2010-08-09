@@ -7,16 +7,20 @@ public class Settings {
 	public final static String SHARED_PREFERENCES = "org.mailboxer.saymyname.dessert";
 
 	private final boolean respectSilent;
+	private final boolean useRingtoneVolume;
+
 	private final int wantedVolume;
 
 	private final String callerFormat;
-	private int callerRepeatSeconds;
-	private int callerRepeatTimes;
+	private final int callerRepeatSeconds;
+	private final int callerSpeechDelay;
+	private final int callerRepeatTimes;
 
 	private final boolean cutName;
 	private final boolean cutNameAfterSpecialCharacters;
 
-	private int emailReadDelay;
+	private final int emailReadDelay;
+	private final int emailSpeechDelay;
 	private final boolean emailReadSubject;
 	private final String emailFormat;
 
@@ -27,7 +31,8 @@ public class Settings {
 
 	private final String smsFormat;
 	private final boolean smsRead;
-	private int smsReadDelay;
+	private final int smsReadDelay;
+	private final int smsSpeechDelay;
 
 	private final String specialCharacters;
 	private final boolean startSayCaller;
@@ -37,7 +42,7 @@ public class Settings {
 
 	private final int ringtoneIndex;
 
-	public Settings(final Context context) {
+	public Settings(final Context context) throws Exception {
 		final SharedPreferences preferences = context.getSharedPreferences(SHARED_PREFERENCES, Context.MODE_WORLD_WRITEABLE);
 
 		startSayCaller = preferences.getBoolean("saycaller", true);
@@ -45,17 +50,13 @@ public class Settings {
 		startSayEMail = preferences.getBoolean("sayemail", true);
 		startSomething = preferences.getBoolean("saysomething", true);
 
+		useRingtoneVolume = preferences.getBoolean("useRingtoneVolume", true);
 		respectSilent = preferences.getBoolean("respectSilent", true);
 		wantedVolume = preferences.getInt("volume", 20);
 
-		callerRepeatSeconds = Integer.parseInt(preferences.getString("callerRepeatSeconds", "3")) * 1000;
-		if (callerRepeatSeconds <= 0) {
-			callerRepeatSeconds = 1;
-		}
-		callerRepeatTimes = Integer.parseInt(preferences.getString("callerRepeatTimes", "6"));
-		if (callerRepeatTimes <= 0) {
-			callerRepeatTimes = 1;
-		}
+		callerRepeatSeconds = Integer.valueOf(preferences.getString("callerRepeatSeconds", "3")) * 1000;
+		callerSpeechDelay = Integer.valueOf(preferences.getString("callerSpeechDelay", "0")) * 1000;
+		callerRepeatTimes = Integer.valueOf(preferences.getString("callerRepeatTimes", "6"));
 
 		callerFormat = preferences.getString("callerFormat", "%");
 		smsFormat = preferences.getString("smsFormat", "%");
@@ -71,16 +72,12 @@ public class Settings {
 		discreet = preferences.getBoolean("discreet", false);
 
 		smsRead = preferences.getBoolean("smsRead", false);
-		smsReadDelay = Integer.parseInt(preferences.getString("smsReadDelay", "3")) * 1000;
-		if (smsReadDelay <= 0) {
-			smsReadDelay = 1000;
-		}
+		smsReadDelay = Integer.valueOf(preferences.getString("smsReadDelay", "3")) * 1000;
+		smsSpeechDelay = Integer.valueOf(preferences.getString("smsSpeechDelay", "0")) * 1000;
 
 		emailReadSubject = preferences.getBoolean("emailReadSubject", false);
-		emailReadDelay = Integer.parseInt(preferences.getString("emailReadDelay", "2")) * 1000;
-		if (emailReadDelay <= 0) {
-			emailReadDelay = 1000;
-		}
+		emailReadDelay = Integer.valueOf(preferences.getString("emailReadDelay", "2")) * 1000;
+		emailSpeechDelay = Integer.valueOf(preferences.getString("emailSpeechDelay", "0")) * 1000;
 
 		ringtoneIndex = preferences.getInt("selectedRingtoneIndex", -42);
 	}
@@ -175,5 +172,21 @@ public class Settings {
 
 	public int getWantedVolume() {
 		return wantedVolume;
+	}
+
+	public boolean isUseRingtoneVolume() {
+		return useRingtoneVolume;
+	}
+
+	public int getCallerSpeechDelay() {
+		return callerSpeechDelay;
+	}
+
+	public int getEmailSpeechDelay() {
+		return emailSpeechDelay;
+	}
+
+	public int getSmsSpeechDelay() {
+		return smsSpeechDelay;
 	}
 }

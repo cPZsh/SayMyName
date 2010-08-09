@@ -90,7 +90,7 @@ public class GmailService extends Service {
 					return;
 				}
 
-				if (from.equals(mailAddress)) {
+				if (from == null || from.equals("") || mailAddress.equals(from.substring(from.indexOf('<') + 1, from.indexOf('>')))) {
 					return;
 				}
 

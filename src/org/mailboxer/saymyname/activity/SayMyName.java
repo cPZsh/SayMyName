@@ -17,12 +17,10 @@ import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.AudioManager;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
@@ -38,6 +36,7 @@ import android.widget.Toast;
 import com.google.tts.TTS;
 import com.google.tts.TTS.InitListener;
 
+@SuppressWarnings("deprecation")
 public class SayMyName extends PreferenceActivity {
 	private static final int saymynameRingtoneCode = 42;
 	private static final int ringtoneCode = 43;
@@ -53,14 +52,9 @@ public class SayMyName extends PreferenceActivity {
 		addPreferencesFromResource(R.xml.preferences);
 		shared = getPreferenceManager().getSharedPreferences();
 
-		// showDonateDialog();
+		showDonateDialog();
 
-		try {
-			saveSilentRingtone();
-		} catch (final Exception e) {
-			e.printStackTrace();
-			Toast.makeText(this, "Something went wrong, please contact me!", Toast.LENGTH_LONG).show();
-		}
+		saveSilentRingtone();
 
 		screen = getPreferenceScreen();
 
@@ -84,7 +78,6 @@ public class SayMyName extends PreferenceActivity {
 
 		screen.findPreference("tts").setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			public boolean onPreferenceClick(final Preference preference) {
-				// start TTS Settings
 				startActivity(new Intent(android.provider.Settings.ACTION_SETTINGS));
 				Toast.makeText(SayMyName.this, SayMyName.this.getString(R.string.preference_tts_toast), Toast.LENGTH_LONG).show();
 
@@ -94,7 +87,6 @@ public class SayMyName extends PreferenceActivity {
 
 		screen.findPreference("ringdroid").setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			public boolean onPreferenceClick(final Preference preference) {
-				// start Ringdroid
 				final Intent intentRingdroid = new Intent("android.intent.action.GET_CONTENT");
 				final Uri ringtone = RingtoneManager.getActualDefaultRingtoneUri(SayMyName.this, RingtoneManager.TYPE_RINGTONE);
 				intentRingdroid.setDataAndType(ringtone, "audio/");
@@ -111,7 +103,6 @@ public class SayMyName extends PreferenceActivity {
 
 		screen.findPreference("locale").setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			public boolean onPreferenceClick(final Preference preference) {
-				// start Locale
 				final Intent intentLocale = new Intent();
 				intentLocale.setComponent(new ComponentName("edu.mit.locale", "edu.mit.locale.ui.activities.Locale"));
 
@@ -127,7 +118,6 @@ public class SayMyName extends PreferenceActivity {
 
 		screen.findPreference("contactChooser").setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			public boolean onPreferenceClick(final Preference preference) {
-				// start ContactChooser.java
 				startActivity(new Intent(SayMyName.this, ContactChooser.class));
 
 				return false;
@@ -136,7 +126,6 @@ public class SayMyName extends PreferenceActivity {
 
 		screen.findPreference("trouble").setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			public boolean onPreferenceClick(final Preference preference) {
-				// view troubleshooting-page
 				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://code.google.com/p/roadtoadc/wiki/HelpHelpHelp")));
 
 				return false;
@@ -153,7 +142,6 @@ public class SayMyName extends PreferenceActivity {
 
 		screen.findPreference("translate").setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			public boolean onPreferenceClick(final Preference preference) {
-				// view translate-page
 				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://code.google.com/p/roadtoadc/wiki/TranslateMe")));
 
 				return false;
@@ -162,7 +150,6 @@ public class SayMyName extends PreferenceActivity {
 
 		screen.findPreference("blog").setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			public boolean onPreferenceClick(final Preference preference) {
-				// view blog
 				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://code.google.com/p/roadtoadc/wiki/Contribute")));
 
 				return false;
@@ -171,16 +158,14 @@ public class SayMyName extends PreferenceActivity {
 
 		screen.findPreference("donate").setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			public boolean onPreferenceClick(final Preference preference) {
-				// install Donate version :D
 				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://market.android.com/search?q=pname:org.mailboxer.saymyname.donate")));
-
-				Toast.makeText(SayMyName.this, getString(R.string.preference_donate_toast), Toast.LENGTH_LONG).show();
 
 				return false;
 			}
 		});
 
 		new Thread() {
+			@Override
 			public void run() {
 				new GmailReceiver().onReceive(SayMyName.this, null);
 
@@ -241,11 +226,12 @@ public class SayMyName extends PreferenceActivity {
 	private void saveSilentRingtone() {
 		File dir;
 		if (Integer.parseInt(Build.VERSION.SDK) >= 8) {
+			// dir = getExternalFilesDir(Environment.DIRECTORY_RINGTONES);
 			// dirs = new File[] {new
 			// File("/mnt/sdcard/Android/data/org.mailboxer.saymyname/files/Ringtones"),
 			// new
 			// File("/mnt/sdcard/Android/data/org.mailboxer.saymyname/files/Notifications")};
-			dir = getExternalFilesDir(Environment.DIRECTORY_RINGTONES);
+			dir = new File("/mnt/sdcard/Android/data/org.mailboxer.saymyname/files/Ringtones");
 		} else {
 			// dirs = new File[] {new File("/sdcard/media/audio/ringtones"), new
 			// File("/sdcard/media/audio/notifications")};
@@ -309,6 +295,11 @@ public class SayMyName extends PreferenceActivity {
 	}
 
 	private void showDonateDialog() {
+		try {
+			createPackageContext("org.mailboxer.saymyname.donate", 0);
+			return;
+		} catch (final Exception e) {}
+
 		final AlertDialog.Builder dialog = new AlertDialog.Builder(this);
 		dialog.setTitle(R.string.dialog_donate_title);
 		dialog.setMessage(R.string.dialog_donate_message);

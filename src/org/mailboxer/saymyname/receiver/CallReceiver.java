@@ -37,7 +37,7 @@ public class CallReceiver extends BroadcastReceiver {
 			final Intent overlayIntent = new Intent(context, OverlayCallscreen.class);
 			overlayIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			overlayIntent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
-			overlayIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+			overlayIntent.addFlags(65536); // Intent.FLAG_ACTIVITY_NO_ANIMATION
 			overlayIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
 			overlayIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 

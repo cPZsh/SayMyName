@@ -17,7 +17,7 @@ public class EclairContact extends Contact {
 	protected void lookupNumber() {
 		Cursor cur = null;
 		try {
-			cur = context.getContentResolver().query(Uri.withAppendedPath(PhoneLookup.CONTENT_FILTER_URI, Uri.encode(incomingNumber)), new String[] {PhoneLookup.DISPLAY_NAME, PhoneLookup.TYPE}, null, null, null);
+			cur = context.getContentResolver().query(Uri.withAppendedPath(PhoneLookup.CONTENT_FILTER_URI, incomingNumber), new String[] {PhoneLookup.DISPLAY_NAME, PhoneLookup.TYPE}, null, null, null);
 
 			final int nameIndex = cur.getColumnIndex(PhoneLookup.DISPLAY_NAME);
 			final int typeIndex = cur.getColumnIndex(PhoneLookup.TYPE);
@@ -42,14 +42,18 @@ public class EclairContact extends Contact {
 	protected void lookupMail() {
 		Cursor cur = null;
 		try {
-			cur = context.getContentResolver().query(Email.CONTENT_URI, new String[] {Email.DISPLAY_NAME, Email.TYPE}, Email.DATA + "=" + "'" + Uri.encode(incomingNumber) + "'", null, null);
+			cur = context.getContentResolver().query(Email.CONTENT_URI, new String[] {Email.DISPLAY_NAME, Email.TYPE}, Email.DATA1 + "=" + "'" + incomingNumber + "'", null, null);
 
 			final int nameIndex = cur.getColumnIndex(Email.DISPLAY_NAME);
 			final int typeIndex = cur.getColumnIndex(Email.TYPE);
 
 			if (cur.moveToFirst()) {
-				type = cur.getString(typeIndex);
 				name = cur.getString(nameIndex);
+				if (name == null) {
+					name = UNKNOWN;
+				}
+
+				type = cur.getString(typeIndex);
 			} else {
 				name = UNKNOWN;
 			}

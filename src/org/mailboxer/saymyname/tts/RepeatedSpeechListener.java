@@ -12,7 +12,7 @@ import com.google.tts.TTS.SpeechCompletedListener;
 
 @SuppressWarnings("deprecation")
 public class RepeatedSpeechListener implements SpeechCompletedListener {
-	private int index = 1;
+	private int index = 2;
 	private final Speaker speaker;
 	private final Context context;
 	private final String[] queue;

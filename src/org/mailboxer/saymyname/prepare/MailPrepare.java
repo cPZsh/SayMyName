@@ -19,28 +19,33 @@ public class MailPrepare extends Prepare {
 	public String[] prepare(final Contact contact, final Settings settings) {
 		String name = contact.getName();
 		if ("".equals(name)) {
-			return new String[] {""};
+			return new String[] {DELAY + "0", ""};
 		}
+
+		final String type = contact.getType();
 
 		final Formatter format = new Formatter(name, settings);
 		name = format.format();
 
 		name = settings.getEMailFormat().replaceFirst("%", name);
+		// name = settings.getCallerFormat().replaceFirst("&", type);
 
 		if (settings.isEMailReadSubject()) {
-			queue = new String[3];
-			queue[0] = name;
-			queue[1] = DELAY + settings.getEMailReadDelay();
-			queue[2] = subject;
+			queue = new String[4];
+			queue[0] = DELAY + settings.getCallerSpeechDelay();
+			queue[1] = name;
+			queue[2] = DELAY + settings.getEMailReadDelay();
+			queue[3] = subject;
 		} else {
-			queue = new String[1];
-			queue[0] = name;
+			queue = new String[2];
+			queue[0] = DELAY + settings.getCallerSpeechDelay();
+			queue[1] = name;
 		}
 
 		if (queue != null) {
 			return queue;
 		} else {
-			return new String[] {""};
+			return new String[] {DELAY + "0", ""};
 		}
 	}
 }

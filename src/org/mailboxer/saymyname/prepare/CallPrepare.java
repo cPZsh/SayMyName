@@ -6,7 +6,6 @@ import org.mailboxer.saymyname.utils.Settings;
 
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
-import android.util.Log;
 
 public class CallPrepare extends Prepare {
 	public CallPrepare(final Bundle extras) {
@@ -22,27 +21,33 @@ public class CallPrepare extends Prepare {
 				queue[0] = "";
 				queue[1] = RINGTONE + settings.getRingtoneIndex();
 			} else {
-				queue = new String[] {""};
+				return new String[] {DELAY + "0", ""};
 			}
-			return new String[] {""};
+
+			return queue;
 		}
+
+		final String type = contact.getType();
 
 		final Formatter format = new Formatter(name, settings);
 		name = format.format();
 
-		name = settings.getCallerFormat().replaceFirst("%", name);
+		String text = settings.getCallerFormat();
+		text = text.replaceFirst("%", name);
+		// text = text.replaceFirst("&", type);
 
 		final int repeat = settings.getCallerRepeatTimes();
 		if (settings.getRingtoneIndex() >= 0) {
-			queue = new String[repeat * 2];
+			queue = new String[repeat * 2 + 1];
 		} else {
-			queue = new String[repeat * 2 - 1];
+			queue = new String[repeat * 2];
 		}
 
-		final int delay = settings.getCallerRepeatSeconds();
+		queue[0] = DELAY + settings.getCallerSpeechDelay();
 
-		for (int i = 0; i < queue.length; i++) {
-			queue[i] = name;
+		final int delay = settings.getCallerRepeatSeconds();
+		for (int i = 1; i < queue.length; i++) {
+			queue[i] = text;
 
 			if (++i < queue.length) {
 				queue[i] = DELAY + delay;
@@ -56,8 +61,7 @@ public class CallPrepare extends Prepare {
 		if (queue != null) {
 			return queue;
 		} else {
-			return new String[] {""};
+			return new String[] {DELAY + "0", ""};
 		}
-
 	}
 }

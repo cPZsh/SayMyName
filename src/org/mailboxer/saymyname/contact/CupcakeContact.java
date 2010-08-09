@@ -21,7 +21,7 @@ public class CupcakeContact extends Contact {
 	protected void lookupNumber() {
 		Cursor cur = null;
 		try {
-			cur = context.getContentResolver().query(Uri.withAppendedPath(Phones.CONTENT_FILTER_URL, Uri.encode(incomingNumber)), new String[] {PeopleColumns.DISPLAY_NAME, PhonesColumns.TYPE}, null, null, null);
+			cur = context.getContentResolver().query(Uri.withAppendedPath(Phones.CONTENT_FILTER_URL, incomingNumber), new String[] {PeopleColumns.DISPLAY_NAME, PhonesColumns.TYPE}, null, null, null);
 
 			final int nameIndex = cur.getColumnIndex(PeopleColumns.DISPLAY_NAME);
 			final int typeIndex = cur.getColumnIndex(PhonesColumns.TYPE);
@@ -46,7 +46,7 @@ public class CupcakeContact extends Contact {
 	protected void lookupMail() {
 		Cursor cur = null;
 		try {
-			cur = context.getContentResolver().query(ContactMethods.CONTENT_URI, new String[] {PeopleColumns.DISPLAY_NAME, ContactMethodsColumns.TYPE}, ContactMethodsColumns.DATA + "=" + "'" + Uri.encode(incomingNumber) + "'", null, null);
+			cur = context.getContentResolver().query(ContactMethods.CONTENT_URI, new String[] {PeopleColumns.DISPLAY_NAME, ContactMethodsColumns.TYPE}, ContactMethodsColumns.DATA + "=" + "'" + incomingNumber + "'", null, null);
 
 			final int nameIndex = cur.getColumnIndex(PeopleColumns.DISPLAY_NAME);
 			final int typeIndex = cur.getColumnIndex(ContactMethodsColumns.TYPE);
@@ -54,6 +54,10 @@ public class CupcakeContact extends Contact {
 			if (cur.moveToFirst()) {
 				name = cur.getString(nameIndex);
 				type = cur.getString(typeIndex);
+
+				if (name == null) {
+					name = UNKNOWN;
+				}
 			} else {
 				name = UNKNOWN;
 			}
