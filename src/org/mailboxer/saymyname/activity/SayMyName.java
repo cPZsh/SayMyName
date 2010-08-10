@@ -193,23 +193,25 @@ public class SayMyName extends PreferenceActivity {
 			}
 		});
 
-		new Thread() {
-			@Override
-			public void run() {
-				new GmailReceiver().onReceive(SayMyName.this, null);
-
-				speaker = new TTS(SayMyName.this, new InitListener() {
-
-					@Override
-					public void onInit(final int arg0) {
-						speaker.setSpeechRate(100);
-
-						speaker.speak("", 0, null);
-						speaker.shutdown();
-					}
-				}, true);
-			};
-		}.start();
+		new GmailReceiver().onReceive(SayMyName.this, null);
+		
+//		new Thread() {
+//			@Override
+//			public void run() {
+//				
+//
+//				speaker = new TTS(SayMyName.this, new InitListener() {
+//
+//					@Override
+//					public void onInit(final int arg0) {
+//						speaker.setSpeechRate(100);
+//
+//						speaker.speak("", 0, null);
+//						speaker.shutdown();
+//					}
+//				}, true);
+//			};
+//		}.start();
 	}
 
 	@Override
