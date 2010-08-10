@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!-- please fill out one of the following fields, so i know who contributes. :) -->
 	<string name="your_name">Tom Tasche</string>
+	<!-- i'll probably add you as a contributor on google code. http://code.google.com/p/roadtoadc/people/list -->
+	<string name="your_mail">tomtasche@gmail.com</string>
+	<!-- i'll probably link your website anywhere. -->
+	<string name="your_web">http://code.google.com/p/roadtoadc/</string>
+	<!-- i'll list you on my twitters list of contributers. http://twitter.com/TomTasche/saymyname -->
+	<string name="your_twitter">tomtasche</string>
+	<!-- if you've got any comments... -->
+	<string name="your_comment">thanks for translating saymyname. :) feel free to contact me if you have problems.</string>
+
+
 	<string name="app_name">SayMyName Dessert</string> <!-- don't translate! -->
 
 	<string name="caller_unknown">unknown</string>
 
-	<string name="tts_check_toast">TTS installed! Everything should work fine :)
-	</string>
+	<!-- "\n" stands for new line, try to leave it as is. -->
+
+	<string name="tts_check_toast">TTS installed! Everything should work fine :)</string>
 
 	<string name="preference_saymyname_title">SayMyName</string>
 
@@ -19,16 +31,13 @@
 	<string name="preference_advanced_title">Advanced Settings</string>
 
 	<string name="preference_readUnknown_title">Read "Unknown"</string>
-	<string name="preference_readUnknown_summary">Read "unknown" if calling number isn\'t saved in
-		addressbook</string>
+	<string name="preference_readUnknown_summary">Read "unknown" if calling number isn\'t saved in addressbook</string>
 
 	<string name="preference_readNumber_title">Read number</string>
-	<string name="preference_readNumber_summary">Read number if calling number isn\'t saved in
-		addressbook</string>
+	<string name="preference_readNumber_summary">Read number if calling number isn\'t saved in addressbook</string>
 
 	<string name="preference_contactChooser_title">Contact Chooser</string>
-	<string name="preference_contactChooser_summary">Don\'t want me to read a specific contact\'s name?
-		Select him here</string>
+	<string name="preference_contactChooser_summary">Don\'t want me to read a specific contact\'s name? Select him here</string>
 
 	<string name="preference_useRingtoneVolume_title">Use Ringtone\'s Volume</string>
 
@@ -39,24 +48,19 @@
 
 	<string name="preference_ringtone_title">Play Ringtone</string>
 	<string name="preference_ringtone_summaryOn">...after I\'ve announced the caller</string>
-	<string name="preference_ringtone_summaryOff">...as you\'ve set it in your phone\'s settings
-		(during speech)</string>
-	<string name="preference_ringtone_toast_finished">Ringtone is now silent</string>
+	<string name="preference_ringtone_summaryOff">...during speech</string>
 
 	<string name="preference_cutName_title">Cut name (whitespace)</string>
 	<string name="preference_cutName_summary">Read name only till first whitespace</string>
 
 	<string name="preference_cutNameAfterSpecialCharacter_title">Cut name (special)</string>
-	<string name="preference_cutNameAfterSpecialCharacter_summary">Read name only till first special character
-	</string>
+	<string name="preference_cutNameAfterSpecialCharacter_summary">Read name only till first special character</string>
 
 	<string name="preference_specialCharacters_title">Special characters</string>
-	<string name="preference_specialCharacters_summary">After which characters should I cut name? Default
-		:/-(</string>
+	<string name="preference_specialCharacters_summary">After which characters should I cut name? Default :/-(</string>
 
 	<string name="preference_transliterate_title">Transliterate</string>
-	<string name="preference_transliterate_summary">Transliterate contact\'s name (for Russian, etc)
-		(uses internet!)</string>
+	<string name="preference_transliterate_summary">Transliterate contact\'s name (for Russian, etc) (see website for more information)</string>
 
 
 	<string name="preference_formatstring_title">Formatstring</string>
@@ -76,14 +80,14 @@
 	<string name="preference_callerRepeatTimes_title">Repeat name</string>
 	<string name="preference_callerRepeatTimes_summary">How often should it repeat the name?</string>
 
-	<string name="preference_formatstring_caller_dialog">% for name \ne.g.: % calls</string>
+	<string name="preference_formatstring_caller_dialog">% for name\n& for type \ne.g.: % calls from &</string>
 
 
 	<string name="preference_saysms_title">SaySMS</string>
 
 	<string name="preference_saysms_settings_title">SaySMS Settings</string>
 
-	<string name="preference_formatstring_sms_dialog">% for name \ne.g.: % writes</string>
+	<string name="preference_formatstring_sms_dialog">% for name\n& for type\ne.g.: % writes from &</string>
 
 	<string name="preference_smsRead_title">Read SMS</string>
 	<string name="preference_smsRead_summary">Read content of the SMS</string>
@@ -93,52 +97,44 @@
 
 	<string name="preference_sayemail_settings_title">SayMail Settings</string>
 
-	<string name="preference_emailAddress_title">Enter your GMail-address (not needed if you use
-		K9-Mail - only for GMail)</string>
+	<string name="preference_emailAddress_title">GMail-address</string>
 	<string name="preference_emailAddress_summary">Enter your address to enable GMail-support</string>
 
-	<string name="preference_formatstring_mail_dialog">% for sender</string>
+	<string name="preference_formatstring_mail_dialog">% for name\n& for type \ne.g.: % writes from &</string>
 
 	<string name="preference_emailReadSubject_title">Read email subject</string>
 	<string name="preference_emailReadSubject_summary">Read the email subject</string>
 
 
-	<string name="preference_external_title">External Tweaks</string>
+	<string name="preference_trouble_title">Troubleshooting</string>
+
+	<string name="preference_tts_title">Speech settings</string>
+
+	<string name="preference_usage_title">Collect usage data</string>
+	<string name="preference_usage_title">Improve this product by sending anonymous informations about app-usage to the developer</string>
 
 	<string name="preference_translate_title">Translate me</string>
 
-	<string name="preference_tts_title">TTS</string>
-	<string name="preference_tts_toast">Navigate to the bottom to Speech synthesis</string>
-
-	<string name="preference_ringdroid_title">Ringdroid</string>
-
-	<string name="preference_locale_title">Locale</string>
-
-	<string name="preference_trouble_title">Troubleshooting</string>
-
 	<string name="preference_twitter_title">Twitter</string>
 
-	<string name="preference_problem_title">Contact me</string>
+	<string name="preference_problem_title">Mail</string>
 
-	<string name="preference_blog_title">Blog</string>
+	<string name="preference_blog_title">Website</string>
 
 	<string name="preference_donate_title">Support me :D</string>
 
 
+	<string name="preference_other_title">Other apps</string>
+
+
 	<string name="dialog_donate_title">You like what I\'m doing?</string>
-	<string name="dialog_donate_message">Hello, \n\nThanks for using SayMyName. \nSayMyName
-		is and is going to stay free and open source! But if you like what
-		I\'m doing and want to help me improve this and other apps, please
-		consider buying me a cookie :) \n\nThanks for your attention and enjoy
-		SayMyName</string>
+	<string name="dialog_donate_message">Hello, \n\nThanks for using SayMyName. \nSayMyName is and is going to stay free and open source! But if you like what I\'m doing and want to help me improve this and other apps, please consider buying me a cookie :) \n\nThanks for your attention and enjoy SayMyName</string>
 	<string name="dialog_donate_button_ok">Donate :D</string>
 	<string name="dialog_donate_toast_thanks">Thanks a lot!</string>
-	<string name="dialog_donate_toast_info">You don\'t need to uninstall the other version of
-		SayMyName</string>
+	<string name="dialog_donate_toast_info">You don\'t need to uninstall the other version of SayMyName</string>
 
 
-	<string name="locale_text">Change how SayMyName behaves at this place / time.
-	</string>
+	<string name="locale_text">Change how SayMyName behaves at this place / time.</string>
 	<string name="locale_enabled">enabled</string>
 	<string name="locale_disabled">disabled</string>
 	<string name="locale_saycaller_enable">Enable SayCaller</string>
