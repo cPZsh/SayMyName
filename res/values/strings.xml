@@ -80,14 +80,14 @@
 	<string name="preference_callerRepeatTimes_title">Repeat name</string>
 	<string name="preference_callerRepeatTimes_summary">How often should it repeat the name?</string>
 
-	<string name="preference_formatstring_caller_dialog">% for name\n& for type \ne.g.: % calls from &</string>
+	<string name="preference_formatstring_caller_dialog">% for name\n&amp; for type \ne.g.: % calls from &amp;</string>
 
 
 	<string name="preference_saysms_title">SaySMS</string>
 
 	<string name="preference_saysms_settings_title">SaySMS Settings</string>
 
-	<string name="preference_formatstring_sms_dialog">% for name\n& for type\ne.g.: % writes from &</string>
+	<string name="preference_formatstring_sms_dialog">% for name\n&amp; for type\ne.g.: % writes from &amp;</string>
 
 	<string name="preference_smsRead_title">Read SMS</string>
 	<string name="preference_smsRead_summary">Read content of the SMS</string>
@@ -100,7 +100,7 @@
 	<string name="preference_emailAddress_title">GMail-address</string>
 	<string name="preference_emailAddress_summary">Enter your address to enable GMail-support</string>
 
-	<string name="preference_formatstring_mail_dialog">% for name\n& for type \ne.g.: % writes from &</string>
+	<string name="preference_formatstring_mail_dialog">% for name\n&amp; for type \ne.g.: % writes from &amp;</string>
 
 	<string name="preference_emailReadSubject_title">Read email subject</string>
 	<string name="preference_emailReadSubject_summary">Read the email subject</string>
@@ -111,7 +111,7 @@
 	<string name="preference_tts_title">Speech settings</string>
 
 	<string name="preference_usage_title">Collect usage data</string>
-	<string name="preference_usage_title">Improve this product by sending anonymous informations about app-usage to the developer</string>
+	<string name="preference_usage_summary">Improve this product by sending anonymous informations about app-usage to the developer</string>
 
 	<string name="preference_translate_title">Translate me</string>
 

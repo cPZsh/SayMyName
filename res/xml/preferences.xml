@@ -171,13 +171,12 @@
 		<Preference android:key="donate" android:title="@string/preference_donate_title" />
 	</PreferenceCategory>
 
-	<PreferenceCategory android:title="@string/preference_external_title"
+	<PreferenceCategory android:title="@string/preference_other_title"
 		android:dependency="saysomething">
-		<PreferenceScreen>
-			<Preference android:key="ringdroid"
-				android:title="@string/preference_ringdroid_title" />
+		<PreferenceScreen android:title="@string/preference_other_title">
+			<Preference android:key="ringdroid" android:title="Ringdroid" />
 
-			<Preference android:key="locale" android:title="@string/preference_locale_title" />
+			<Preference android:key="locale" android:title="Locale" />
 		</PreferenceScreen>
 	</PreferenceCategory>
 </PreferenceScreen>

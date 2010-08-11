@@ -36,15 +36,12 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.google.tts.ConfigurationManager;
-import com.google.tts.TTS;
-import com.google.tts.TTS.InitListener;
 
 @SuppressWarnings("deprecation")
 public class SayMyName extends PreferenceActivity {
 	private static final int saymynameRingtoneCode = 42;
 	private static final int ringtoneCode = 43;
 
-	private TTS speaker;
 	private PreferenceScreen screen;
 	private SharedPreferences shared;
 
@@ -59,16 +56,15 @@ public class SayMyName extends PreferenceActivity {
 			createPackageContext("com.google.tts", 0);
 
 			if (!ConfigurationManager.allFilesExist()) {
-				final Context myContext = createPackageContext("com.google.tts", Context.CONTEXT_INCLUDE_CODE | Context.CONTEXT_IGNORE_SECURITY);
-				Class<?> appClass;
 				try {
-					appClass = myContext.getClassLoader().loadClass("com.google.tts.ConfigurationManager");
+					final Intent intentTTS = new Intent();
+					intentTTS.setComponent(new ComponentName("com.google.tts", "com.google.tts.ConfigurationManager"));
 
-					startActivity(new Intent(myContext, appClass));
+					startActivity(intentTTS);
 
 					finish();
 					return;
-				} catch (final ClassNotFoundException e) {
+				} catch (final ActivityNotFoundException e) {
 					e.printStackTrace();
 				}
 			}
@@ -107,8 +103,12 @@ public class SayMyName extends PreferenceActivity {
 
 		screen.findPreference("tts").setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			public boolean onPreferenceClick(final Preference preference) {
-				startActivity(new Intent(android.provider.Settings.ACTION_SETTINGS));
-				Toast.makeText(SayMyName.this, SayMyName.this.getString(R.string.preference_tts_toast), Toast.LENGTH_LONG).show();
+				final Intent intentTTS = new Intent();
+				intentTTS.setComponent(new ComponentName("com.google.tts", "com.google.tts.ConfigurationManager"));
+
+				try {
+					startActivity(intentTTS);
+				} catch (final ActivityNotFoundException e) {}
 
 				return false;
 			}
@@ -194,24 +194,24 @@ public class SayMyName extends PreferenceActivity {
 		});
 
 		new GmailReceiver().onReceive(SayMyName.this, null);
-		
-//		new Thread() {
-//			@Override
-//			public void run() {
-//				
-//
-//				speaker = new TTS(SayMyName.this, new InitListener() {
-//
-//					@Override
-//					public void onInit(final int arg0) {
-//						speaker.setSpeechRate(100);
-//
-//						speaker.speak("", 0, null);
-//						speaker.shutdown();
-//					}
-//				}, true);
-//			};
-//		}.start();
+
+		// new Thread() {
+		// @Override
+		// public void run() {
+		//				
+		//
+		// speaker = new TTS(SayMyName.this, new InitListener() {
+		//
+		// @Override
+		// public void onInit(final int arg0) {
+		// speaker.setSpeechRate(100);
+		//
+		// speaker.speak("", 0, null);
+		// speaker.shutdown();
+		// }
+		// }, true);
+		// };
+		// }.start();
 	}
 
 	@Override

@@ -155,6 +155,7 @@ public class ManagerService extends Service {
 
 		if (notificationManager != null) {
 			notificationManager.cancel(18);
+			notificationManager.cancelAll();
 		}
 
 		if (audioManager != null) {
