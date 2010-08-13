@@ -28,7 +28,12 @@ public class GmailService extends Service {
 		gmailObserver = new GMailObserver(new Handler(), getContentResolver());
 
 		final SharedPreferences preferences = getSharedPreferences(Settings.SHARED_PREFERENCES, Context.MODE_WORLD_WRITEABLE);
-		mailAddress = preferences.getString("emailAddress", "failed@gmail.com").toLowerCase();
+		mailAddress = preferences.getString("emailAddress", "xxx@gmail.com").toLowerCase();
+
+		if (mailAddress.equals("xxx@gmail.com")) {
+			stopSelf();
+			return;
+		}
 
 		try {
 			getContentResolver().registerContentObserver(Uri.parse("content://gmail-ls/conversations/" + Uri.encode(mailAddress)), true, gmailObserver);

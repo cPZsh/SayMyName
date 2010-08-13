@@ -55,5 +55,15 @@ public class CallReceiver extends BroadcastReceiver {
 	private void shutdown() {
 		final Intent serviceIntent = new Intent(context, ManagerService.class);
 		context.stopService(serviceIntent);
+
+		final Intent overlayIntent = new Intent(context, OverlayCallscreen.class);
+		overlayIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		overlayIntent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+		overlayIntent.addFlags(65536); // Intent.FLAG_ACTIVITY_NO_ANIMATION
+		overlayIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+		overlayIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
+		// overlayIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+		context.startActivity(overlayIntent);
 	}
 }

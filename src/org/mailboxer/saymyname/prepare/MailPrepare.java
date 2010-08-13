@@ -32,13 +32,13 @@ public class MailPrepare extends Prepare {
 
 		if (settings.isEMailReadSubject()) {
 			queue = new String[4];
-			queue[0] = DELAY + settings.getCallerSpeechDelay();
+			queue[0] = DELAY + settings.getEmailSpeechDelay();
 			queue[1] = name;
 			queue[2] = DELAY + settings.getEMailReadDelay();
 			queue[3] = subject;
 		} else {
 			queue = new String[2];
-			queue[0] = DELAY + settings.getCallerSpeechDelay();
+			queue[0] = DELAY + settings.getEmailSpeechDelay();
 			queue[1] = name;
 		}
 

@@ -20,26 +20,24 @@ public final class R {
         public static final int locale_icon_save_color_40=0x7f020006;
     }
     public static final class id {
-        public static final int Button01=0x7f09000f;
-        public static final int TextView01=0x7f09000d;
         public static final int enableCallerCheck=0x7f090004;
         public static final int enableEMailCheck=0x7f090006;
         public static final int enableSMSCheck=0x7f090005;
         public static final int imageButton=0x7f09000b;
-        public static final int image_icon=0x7f09000c;
         public static final int layout=0x7f090009;
         public static final int locale_ellipsizing_title_text=0x7f090008;
-        public static final int menu_dontsave=0x7f090012;
-        public static final int menu_help=0x7f090011;
-        public static final int menu_save=0x7f090013;
+        public static final int menu_dontsave=0x7f090010;
+        public static final int menu_help=0x7f09000f;
+        public static final int menu_save=0x7f090011;
         public static final int row_display_name=0x7f090003;
         public static final int row_ringtone=0x7f090001;
         public static final int row_starred=0x7f090002;
         public static final int screen=0x7f090007;
         public static final int search_filter=0x7f090000;
         public static final int textView=0x7f09000a;
-        public static final int toast_text=0x7f09000e;
-        public static final int widget_button=0x7f090010;
+        public static final int widget0=0x7f09000c;
+        public static final int widget28=0x7f09000d;
+        public static final int widget_button=0x7f09000e;
     }
     public static final class layout {
         public static final int activated=0x7f030000;
@@ -49,7 +47,7 @@ public final class R {
         public static final int locale_activity=0x7f030004;
         public static final int locale_ellipsizing_title=0x7f030005;
         public static final int main=0x7f030006;
-        public static final int toast_layout=0x7f030007;
+        public static final int progress=0x7f030007;
         public static final int widget=0x7f030008;
     }
     public static final class menu {
@@ -61,6 +59,9 @@ public final class R {
     public static final class string {
         public static final int app_name=0x7f060005;
         /**  don't translate! 
+ don't translate! 
+ don't translate! 
+ don't translate! 
          */
         public static final int caller_unknown=0x7f060006;
         public static final int dialog_donate_button_ok=0x7f060046;
@@ -138,21 +139,39 @@ public final class R {
         public static final int preference_wantedVolume_summary=0x7f060016;
         public static final int preference_wantedVolume_title=0x7f060015;
         /**  "\n" stands for new line, try to leave it as is. 
+ "\n" stands for new line, try to leave it as is. 
+ "\n" stands for new line, try to leave it as is. 
+ "\n" stands for new line, try to leave it as is. 
          */
         public static final int tts_check_toast=0x7f060007;
         /**  if you've got any comments... 
+ if you've got any comments... 
+ if you've got any comments... 
+ if you've got any comments... 
          */
         public static final int your_comment=0x7f060004;
         /**  i'll probably add you as a contributor on google code. http://code.google.com/p/roadtoadc/people/list 
+ i'll probably add you as a contributor on google code. http://code.google.com/p/roadtoadc/people/list 
+ i'll probably add you as a contributor on google code. http://code.google.com/p/roadtoadc/people/list 
+ i'll probably add you as a contributor on google code. http://code.google.com/p/roadtoadc/people/list 
          */
         public static final int your_mail=0x7f060001;
         /**  please fill out one of the following fields, so i know who contributes. :) 
+ please fill out one of the following fields, so i know who contributes. :) 
+ please fill out one of the following fields, so i know who contributes. :) 
+ please fill out one of the following fields, so i know who contributes. :) 
          */
         public static final int your_name=0x7f060000;
         /**  i'll list you on my twitters list of contributers. http://twitter.com/TomTasche/saymyname 
+ i'll list you on my twitters list of contributers. http://twitter.com/TomTasche/saymyname 
+ i'll list you on my twitters list of contributers. http://twitter.com/TomTasche/saymyname 
+ i'll list you on my twitters list of contributers. http://twitter.com/TomTasche/saymyname 
          */
         public static final int your_twitter=0x7f060003;
         /**  i'll probably link your website anywhere. 
+ i'll probably link your website anywhere. 
+ i'll probably link your website anywhere. 
+ i'll probably link your website anywhere. 
          */
         public static final int your_web=0x7f060002;
     }

@@ -31,13 +31,13 @@ public class SmsPrepare extends Prepare {
 
 		if (settings.isSmsRead()) {
 			queue = new String[4];
-			queue[0] = DELAY + settings.getCallerSpeechDelay();
+			queue[0] = DELAY + settings.getSmsSpeechDelay();
 			queue[1] = name;
 			queue[2] = DELAY + settings.getSmsReadDelay();
 			queue[3] = message;
 		} else {
 			queue = new String[2];
-			queue[0] = DELAY + settings.getCallerSpeechDelay();
+			queue[0] = DELAY + settings.getSmsSpeechDelay();
 			queue[1] = name;
 		}
 

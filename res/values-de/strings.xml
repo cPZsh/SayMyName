@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- please fill out one of the following fields, so i know who contributes. :) -->
+	<string name="your_name">David Kejzlar</string>
+	<!-- i'll probably add you as a contributor on google code. http://code.google.com/p/roadtoadc/people/list -->
+	<string name="your_mail">kejly@kejly.cz</string>
+	<!-- i'll probably link your website anywhere. -->
+	<string name="your_web"></string>
+	<!-- i'll list you on my twitters list of contributers. http://twitter.com/TomTasche/saymyname -->
+	<string name="your_twitter">t</string>
+	<!-- if you've got any comments... -->
+	<string name="your_comment">Entschuldigung für meine Deutsch.</string>
+
+
+	<string name="app_name">SayMyName Dessert</string> <!-- don't translate! -->
+
+	<string name="caller_unknown">unbekannt</string>
+
+	<!-- "\n" stands for new line, try to leave it as is. -->
+
+	<string name="tts_check_toast">TTS ist installiert! Alles soll perfekt funkzionieren :)</string>
+
+	<string name="preference_saymyname_title">SayMyName</string>
+
+	<string name="preference_discreetMode_title">Diskretes Modus</string>
+	<string name="preference_discreetMode_summary">Nur in Kopfhöher abspielen</string>
+
+	<string name="preference_showSilenceScreen_title">Stummfenster anzeigen</string>
+	<string name="preference_showSilenceScreen_summary">Stumm-Fenster beim Anruf anzeigen</string>
+
+	<string name="preference_advanced_title">Erweiterte Einstellungen</string>
+
+	<string name="preference_readUnknown_title">"Unbekannt" lesen</string>
+	<string name="preference_readUnknown_summary">"unbekannt" lesen, wenn die Rufnummer nicht in\nAdressbuch enthalten ist</string>
+
+	<string name="preference_readNumber_title">Nummer lesen</string>
+	<string name="preference_readNumber_summary">Rufnummer lesen, wenn die Rufnummer nicht in\nAdressbuch enthalten ist</string>
+
+	<string name="preference_contactChooser_title">Kontakte auswählen</string>
+	<string name="preference_contactChooser_summary">Wollen Sie spezifische Kontakte nicht lesen?\nDiese können Sie hier auswählen</string>
+
+	<string name="preference_useRingtoneVolume_title">Klingelton-Lautstärke übernehmen</string>
+
+	<string name="preference_wantedVolume_title">Klingelton-unabhängige Lautstärke</string>
+	<string name="preference_wantedVolume_summary">Klingelton-unabhängige Lautstärke einstellen</string>
+
+	<string name="preference_respectSilent_title">Stummmode beachten</string>
+
+	<string name="preference_ringtone_title">Klingeltone abspielen</string>
+	<string name="preference_ringtone_summaryOn">...nach der Anrufer Anmeldung</string>
+	<string name="preference_ringtone_summaryOff">...während der Sprache</string>
+
+	<string name="preference_cutName_title">Name abschneiden (Leerzeichen)</string>
+	<string name="preference_cutName_summary">Name nur bis Leerzeichen lesen</string>
+
+	<string name="preference_cutNameAfterSpecialCharacter_title">Name abschneiden (spezial)</string>
+	<string name="preference_cutNameAfterSpecialCharacter_summary">Name nur bis Sonderzeichen lesen</string>
+
+	<string name="preference_specialCharacters_title">Sonderzeichen</string>
+	<string name="preference_specialCharacters_summary">Nach welchem Sonderzeichen soll ich die Name abschneiden? Standartmässig :/-(</string>
+
+	<string name="preference_transliterate_title">Transliteration</string>
+	<string name="preference_transliterate_summary">Die Name Transliterieren (übersetzen) (für Russisch, usw.) (sehen Sie die Webseite für mehr Infos)</string>
+
+
+	<string name="preference_formatstring_title">Formatstring</string>
+	<string name="preference_formatstring_summary">Die Meldung anpasen</string>
+
+	<string name="preference_speechDelay_title">Sprachverzögerung</string>
+	<string name="preference_speechDelay_summary">Sprachverzögerung vor dem Lesen</string>
+
+	<string name="preference_readingBreak_title">Wiederholungspause</string>
+	<string name="preference_readingBreak_summary">Die Pause zwischen Wiederholungen einstellen</string>
+
+
+	<string name="preference_saycaller_title">SayCaller</string>
+
+	<string name="preference_saycaller_settings_title">SayCaller Einstellungen</string>
+
+	<string name="preference_callerRepeatTimes_title">Name wiederholen</string>
+	<string name="preference_callerRepeatTimes_summary">Wievielmal soll ich die Name wiederholen?</string>
+
+	<string name="preference_formatstring_caller_dialog">% für Name\n&amp; für Typ \nzB.: % ruft von &amp;</string>
+
+
+	<string name="preference_saysms_title">SaySMS</string>
+
+	<string name="preference_saysms_settings_title">SaySMS Einstellungen</string>
+
+	<string name="preference_formatstring_sms_dialog">% für Name\n&amp; für Typ\nzB.: % schreibt von &amp;</string>
+
+	<string name="preference_smsRead_title">SMS lesen</string>
+	<string name="preference_smsRead_summary">SMS-Inhalt lesen</string>
+
+
+	<string name="preference_sayemail_title">SayMail</string>
+
+	<string name="preference_sayemail_settings_title">SayMail Einstellungen</string>
+
+	<string name="preference_emailAddress_title">GMail-Addresse</string>
+	<string name="preference_emailAddress_summary">Bitte die Adresse eintragen, um GMail-Unterstützung zu aktivieren</string>
+
+	<string name="preference_formatstring_mail_dialog">% für Name\n&amp; für Typ \nzB.: % schreibt von &amp;</string>
+
+	<string name="preference_emailReadSubject_title">Email Betreff lesen</string>
+	<string name="preference_emailReadSubject_summary">Email Betreff lesen</string>
+
+
+	<string name="preference_trouble_title">Problemlösung</string>
+
+	<string name="preference_tts_title">Spracheinstellungen</string>
+
+	<string name="preference_usage_title">Anwendungsdaten sammeln</string>
+	<string name="preference_usage_summary">Hilfen Sie das Produkt besser zu machen. Schicken Sie die anonyme Anwendungsdaten zum Hersteller.</string>
+
+	<string name="preference_translate_title">Übersetzen</string>
+
+	<string name="preference_twitter_title">Twitter</string>
+
+	<string name="preference_problem_title">Mail</string>
+
+	<string name="preference_blog_title">Webseite</string>
+
+	<string name="preference_donate_title">Spenden :D</string>
+
+
+	<string name="preference_other_title">Andere Anwendungen</string>
+
+
+	<string name="dialog_donate_title">Gefällt\'s Ihnen\Was ich mache?</string>
+	<string name="dialog_donate_message">Hallo, \n\nDanke für Nutzung von SayMyName. \nSayMyName ist und bleibt gratis und open source! Wenn gefällt\'s Inhen, was ich gemacht habe und wollen Sie helfen diese und andere Anwendungen besser zu machen, Sie können mir Kekse kaufen :) \n\nDanke für Ihre Aufmerksamkeit und geniessen Sie SayMyName</string>
+	<string name="dialog_donate_button_ok">Spenden :D</string>
+	<string name="dialog_donate_toast_thanks">Vielen Dank!</string>
+	<string name="dialog_donate_toast_info">Sie brauchen nicht die andere Version von SayMyName zu deinstallieren</string>
+
+
+	<string name="locale_text">Einstellen Sie, wie sich SayMyName an diesem Ort / zu dieser Zeit verhält.</string>
+	<string name="locale_enabled">aktiviert</string>
+	<string name="locale_disabled">deaktiviert</string>
+	<string name="locale_saycaller_enable">SayCaller aktivieren</string>
+	<string name="locale_saysms_enable">SaySMS aktivieren</string>
+	<string name="locale_sayemail_enable">SayMail aktivieren</string>
+
+	<string name="locale_help">Hilfe</string>
+	<string name="locale_save">Speichern</string>
+	<string name="locale_dontsave">Nicht speichen</string>
+</resources>

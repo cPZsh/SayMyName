@@ -87,6 +87,8 @@ public class ManagerService extends Service {
 			return;
 		}
 
+		audioManager.requestAudioFocus(null, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+
 		previousVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
 
 		if (settings.isUseRingtoneVolume()) {
@@ -160,6 +162,8 @@ public class ManagerService extends Service {
 
 		if (audioManager != null) {
 			audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, previousVolume, 0);
+
+			audioManager.abandonAudioFocus(null);
 		}
 
 		if (notificationReceiver != null) {

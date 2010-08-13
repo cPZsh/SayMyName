@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- please fill out one of the following fields, so i know who contributes. :) -->
+	<string name="your_name">David Kejzlar</string>
+	<!-- i'll probably add you as a contributor on google code. http://code.google.com/p/roadtoadc/people/list -->
+	<string name="your_mail">kejly@kejly.cz</string>
+	<!-- i'll probably link your website anywhere. -->
+	<string name="your_web"></string>
+	<!-- i'll list you on my twitters list of contributers. http://twitter.com/TomTasche/saymyname -->
+	<string name="your_twitter"></string>
+	<!-- if you've got any comments... -->
+	<string name="your_comment">Omlouvám se za svoji slovenčinu</string>
+
+
+	<string name="app_name">SayMyName Dessert</string> <!-- don't translate! -->
+
+	<string name="caller_unknown">neznamy</string>
+
+	<!-- "\n" stands for new line, try to leave it as is. -->
+
+	<string name="tts_check_toast">TTS je nainštalován! Všetko by malo fungovať :)</string>
+
+	<string name="preference_saymyname_title">SayMyName</string>
+
+	<string name="preference_discreetMode_title">Diškrétny mód</string>
+	<string name="preference_discreetMode_summary">Mluviť iba do sluchátok</string>
+
+	<string name="preference_showSilenceScreen_title">Ukázať stlmenie</string>
+	<string name="preference_showSilenceScreen_summary">Ukázať obrazovku stmiť počas hovoru</string>
+
+	<string name="preference_advanced_title">Pokročilé nastavenie</string>
+
+	<string name="preference_readUnknown_title">Čítať "Neznamy"</string>
+	<string name="preference_readUnknown_summary">Čítať "neznamy" keď volajúci nieje v\ntelefónnom zozname</string>
+
+	<string name="preference_readNumber_title">Čítať čislo</string>
+	<string name="preference_readNumber_summary">Čítať číslo keď volajúci nieje v\ntelefónnom zozname</string>
+
+	<string name="preference_contactChooser_title">Výber kontaktov</string>
+	<string name="preference_contactChooser_summary">Nechcete čítať určité kontakty?\nVyberte ich tu</string>
+
+	<string name="preference_useRingtoneVolume_title">Použít hlasitosť vyzvánenia</string>
+
+	<string name="preference_wantedVolume_title">Hlasitosť nezávislá na vyzváneniu</string>
+	<string name="preference_wantedVolume_summary">Nastaviť hlasitosť nezávislú na hlasitosťi vyzvánenia</string>
+
+	<string name="preference_respectSilent_title">Rešpektovať tichý mód</string>
+
+	<string name="preference_ringtone_title">Prehráť vyzvánenie</string>
+	<string name="preference_ringtone_summaryOn">...po přečítaní volajúceho</string>
+	<string name="preference_ringtone_summaryOff">...počas čítania</string>
+
+	<string name="preference_cutName_title">Orezanie mena (medzera)</string>
+	<string name="preference_cutName_summary">Čítať meno iba po prvů medzeru</string>
+
+	<string name="preference_cutNameAfterSpecialCharacter_title">Orezanie mena (rozšírené)</string>
+	<string name="preference_cutNameAfterSpecialCharacter_summary">Čítať meno iba po prvý zvláštný znak</string>
+
+	<string name="preference_specialCharacters_title">Zvláštné znaky</string>
+	<string name="preference_specialCharacters_summary">Po akom znaku mám orezať meno? Štandartne :/-(</string>
+
+	<string name="preference_transliterate_title">Transliterácia</string>
+	<string name="preference_transliterate_summary">Transliterovať (preložiť) meno (pre ruštinu, atd.) (pozriťe web pro viacej informácií)</string>
+
+
+	<string name="preference_formatstring_title">Formát</string>
+	<string name="preference_formatstring_summary">Zmena oznámenia</string>
+
+	<string name="preference_speechDelay_title">Zdržanie reči</string>
+	<string name="preference_speechDelay_summary">Zdržanie pred štartom reči</string>
+
+	<string name="preference_readingBreak_title">Pauza medzi čítaním</string>
+	<string name="preference_readingBreak_summary">Nastaviť pauzu medzi čítaními</string>
+
+
+	<string name="preference_saycaller_title">SayCaller</string>
+
+	<string name="preference_saycaller_settings_title">SayCaller nastavenie</string>
+
+	<string name="preference_callerRepeatTimes_title">Opakovať meno</string>
+	<string name="preference_callerRepeatTimes_summary">Koľkokrat mám opakovať meno?</string>
+
+	<string name="preference_formatstring_caller_dialog">% pre meno\n&amp; pre typ \nnapr.: % volá z &amp;</string>
+
+
+	<string name="preference_saysms_title">SaySMS</string>
+
+	<string name="preference_saysms_settings_title">SaySMS nastavenie</string>
+
+	<string name="preference_formatstring_sms_dialog">% pre meno\n&amp; pre typ\nnapr.: % píše z &amp;</string>
+
+	<string name="preference_smsRead_title">Čítať SMS</string>
+	<string name="preference_smsRead_summary">Čítať obsah SMS</string>
+
+
+	<string name="preference_sayemail_title">SayMail</string>
+
+	<string name="preference_sayemail_settings_title">SayMail nastavenie</string>
+
+	<string name="preference_emailAddress_title">GMail-addresa</string>
+	<string name="preference_emailAddress_summary">Vložte svoju adresu pre povolenie GMail-podpory</string>
+
+	<string name="preference_formatstring_mail_dialog">% pre meno\n&amp; pre typ \nnapr.: % píše z &amp;</string>
+
+	<string name="preference_emailReadSubject_title">Čítať predmet emailu</string>
+	<string name="preference_emailReadSubject_summary">Čítať predmet emailu</string>
+
+
+	<string name="preference_trouble_title">Riešenie problémov</string>
+
+	<string name="preference_tts_title">Nastavenie reči</string>
+
+	<string name="preference_usage_title">Sbierať data o použitiu</string>
+	<string name="preference_usage_summary">Pomôžte vylepšiť tento produkt odosíláním anonýmnych informácií o používaniu vývojárovi</string>
+
+	<string name="preference_translate_title">Preložiť</string>
+
+	<string name="preference_twitter_title">Twitter</string>
+
+	<string name="preference_problem_title">Mail</string>
+
+	<string name="preference_blog_title">Web</string>
+
+	<string name="preference_donate_title">Prispejte :D</string>
+
+
+	<string name="preference_other_title">Dalšie aplikácie</string>
+
+
+	<string name="dialog_donate_title">Páči sa Vám, čo robím?</string>
+	<string name="dialog_donate_message">Ahoj, \n\nĎakujem za používánie SayMyName. \nSayMyName je a zôstane zdarma a open source! Ak se Vám ale páči, čo robím a chcete mi pomôcť vylepšiť túto a iné aplikácie, môžeťe mi kúpiť sušienky :) \n\nVďaka za Vašu pozornosť a užite si SayMyName</string>
+	<string name="dialog_donate_button_ok">Prispeť :D</string>
+	<string name="dialog_donate_toast_thanks">Moc ďakujem!</string>
+	<string name="dialog_donate_toast_info">Nieje nutné odinštalovať inú verziu SayMyName</string>
+
+
+	<string name="locale_text">Nastaviť, ako se SayMyName chová v tomto miestě / čase.</string>
+	<string name="locale_enabled">povolené</string>
+	<string name="locale_disabled">zakázáné</string>
+	<string name="locale_saycaller_enable">Povoliť SayCaller</string>
+	<string name="locale_saysms_enable">Povoliť SaySMS</string>
+	<string name="locale_sayemail_enable">Povoliť SayMail</string>
+
+	<string name="locale_help">Pomôc</string>
+	<string name="locale_save">Uložiť</string>
+	<string name="locale_dontsave">Neukládať</string>
+</resources>

@@ -1,6 +1,12 @@
 package org.mailboxer.saymyname.contact;
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
 
 import org.mailboxer.saymyname.R;
 import org.mailboxer.saymyname.utils.Settings;
@@ -78,54 +84,52 @@ public abstract class Contact {
 	protected abstract void lookupMail();
 
 	public void transliterate() {
-	// final TransliterationReceiver receiver = new TransliterationReceiver();
-	// context.registerReceiver(receiver, new
-	// IntentFilter(INTENT_FINISHED_ACTION));
+		// final TransliterationReceiver receiver = new
+		// TransliterationReceiver();
+		// context.registerReceiver(receiver, new
+		// IntentFilter(INTENT_FINISHED_ACTION));
 
-	// Log.e("smn", "send bc");
-	// Intent broadcastIntent = new Intent();
-	// broadcastIntent.setAction(INTENT_ACTION);
-	// broadcastIntent.putExtra(EXTRA_TEXT, name);
-	// broadcastIntent.putExtra(EXTRA_ID, System.currentTimeMillis());
-	// context.sendBroadcast(broadcastIntent);
+		// Log.e("smn", "send bc");
+		// Intent broadcastIntent = new Intent();
+		// broadcastIntent.setAction(INTENT_ACTION);
+		// broadcastIntent.putExtra(EXTRA_TEXT, name);
+		// broadcastIntent.putExtra(EXTRA_ID, System.currentTimeMillis());
+		// context.sendBroadcast(broadcastIntent);
 
-	// new Thread() {
-	// public void run() {
-	// try {
-	// sleep(2000);
-	//					
-	// name = receiver.getText();
-	//					
-	// context.unregisterReceiver(receiver);
-	// } catch (InterruptedException e) {}
-	// };
-	// }.start();
+		// new Thread() {
+		// public void run() {
+		// try {
+		// sleep(2000);
+		//					
+		// name = receiver.getText();
+		//					
+		// context.unregisterReceiver(receiver);
+		// } catch (InterruptedException e) {}
+		// };
+		// }.start();
 
-	// name = "upsi";
+		// name = "upsi";
 
-	// final String searchString = "translatedText\":\"";
-	// String result = "";
-	//
-	// try {
-	// final String text = URLEncoder.encode(name);
-	// final InputStreamReader reader = new InputStreamReader(new
-	// URL("http://ajax.googleapis.com/ajax/services/language/translate?v=1.0&q="
-	// + text + "&langpair=|en").openStream());
-	// final BufferedReader buffReader = new BufferedReader(reader);
-	//
-	// result = buffReader.readLine();
-	// result = result.substring(result.indexOf(searchString) +
-	// searchString.length(), result.length());
-	// result = result.substring(0, result.indexOf('"'));
-	// } catch (final MalformedURLException e) {
-	// e.printStackTrace();
-	// } catch (final IOException e) {
-	// e.printStackTrace();
-	// } catch (final NullPointerException e) {
-	// e.printStackTrace();
-	// }
-	//
-	// name = result;
+		final String searchString = "translatedText\":\"";
+		String result = "";
+
+		try {
+			final String text = URLEncoder.encode(name);
+			final InputStreamReader reader = new InputStreamReader(new URL("http://ajax.googleapis.com/ajax/services/language/translate?v=1.0&q=" + text + "&langpair=|en").openStream());
+			final BufferedReader buffReader = new BufferedReader(reader);
+
+			result = buffReader.readLine();
+			result = result.substring(result.indexOf(searchString) + searchString.length(), result.length());
+			result = result.substring(0, result.indexOf('"'));
+		} catch (final MalformedURLException e) {
+			e.printStackTrace();
+		} catch (final IOException e) {
+			e.printStackTrace();
+		} catch (final NullPointerException e) {
+			e.printStackTrace();
+		}
+
+		name = result;
 	}
 
 	public String getName() {
@@ -154,7 +158,7 @@ public abstract class Contact {
 			if (settings.isTransliterate()) {
 				transliterate();
 			}
-			return name;
+			return name.toLowerCase();
 		}
 	}
 
