@@ -1,5 +1,8 @@
 package org.mailboxer.saymyname.service;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 import org.mailboxer.saymyname.R;
 import org.mailboxer.saymyname.contact.Contact;
 import org.mailboxer.saymyname.prepare.CallPrepare;
@@ -87,7 +90,10 @@ public class ManagerService extends Service {
 			return;
 		}
 
-		audioManager.requestAudioFocus(null, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+		try {
+			final Method requestAudioFocus = AudioManager.class.getMethod("requestAudioFocus", null);
+			requestAudioFocus.invoke(null, null, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+		} catch (final NoSuchMethodException nsme) {} catch (final IllegalArgumentException e) {} catch (final IllegalAccessException e) {} catch (final InvocationTargetException e) {}
 
 		previousVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
 
@@ -163,7 +169,10 @@ public class ManagerService extends Service {
 		if (audioManager != null) {
 			audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, previousVolume, 0);
 
-			audioManager.abandonAudioFocus(null);
+			try {
+				final Method abandonAudioFocus = AudioManager.class.getMethod("abandonAudioFocus", null);
+				abandonAudioFocus.invoke(null, null);
+			} catch (final NoSuchMethodException nsme) {} catch (final IllegalArgumentException e) {} catch (final IllegalAccessException e) {} catch (final InvocationTargetException e) {}
 		}
 
 		if (notificationReceiver != null) {

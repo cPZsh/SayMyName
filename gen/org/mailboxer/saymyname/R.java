@@ -26,18 +26,16 @@ public final class R {
         public static final int imageButton=0x7f09000b;
         public static final int layout=0x7f090009;
         public static final int locale_ellipsizing_title_text=0x7f090008;
-        public static final int menu_dontsave=0x7f090010;
-        public static final int menu_help=0x7f09000f;
-        public static final int menu_save=0x7f090011;
+        public static final int menu_dontsave=0x7f09000e;
+        public static final int menu_help=0x7f09000d;
+        public static final int menu_save=0x7f09000f;
         public static final int row_display_name=0x7f090003;
         public static final int row_ringtone=0x7f090001;
         public static final int row_starred=0x7f090002;
         public static final int screen=0x7f090007;
         public static final int search_filter=0x7f090000;
         public static final int textView=0x7f09000a;
-        public static final int widget0=0x7f09000c;
-        public static final int widget28=0x7f09000d;
-        public static final int widget_button=0x7f09000e;
+        public static final int widget_button=0x7f09000c;
     }
     public static final class layout {
         public static final int activated=0x7f030000;
@@ -47,7 +45,7 @@ public final class R {
         public static final int locale_activity=0x7f030004;
         public static final int locale_ellipsizing_title=0x7f030005;
         public static final int main=0x7f030006;
-        public static final int progress=0x7f030007;
+        public static final int progressbar=0x7f030007;
         public static final int widget=0x7f030008;
     }
     public static final class menu {

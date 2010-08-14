@@ -10,6 +10,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.google.tts.TTS;
+import com.google.tts.TTSEngine;
 
 @SuppressWarnings("deprecation")
 public class Speaker {
@@ -25,6 +26,7 @@ public class Speaker {
 			public void run() {
 				try {
 					speaker = new TTS(service, new StartListener(Speaker.this), false);
+					speaker.setEngine(TTSEngine.PICO);
 				} catch (final Exception e) {
 					e.printStackTrace();
 

@@ -14,6 +14,7 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 
 public class OverlayCallscreen extends Activity {
+	Thread thread;
 
 	@Override
 	public void onCreate(final Bundle savedInstanceState) {
@@ -37,13 +38,26 @@ public class OverlayCallscreen extends Activity {
 		setVisible(true);
 
 		setContentView(R.layout.main);
+
+		thread = new Thread() {
+			@Override
+			public void run() {
+				try {
+					sleep(500);
+				} catch (final InterruptedException e) {}
+
+				if (hasWindowFocus()) {
+					setContentView(R.layout.main);
+					setVisible(true);
+				}
+			}
+		};
 	}
 
 	@Override
 	public void onWindowFocusChanged(final boolean hasFocus) {
-		if (!hasFocus) {
-			setContentView(R.layout.main);
-		}
+		setContentView(R.layout.main);
+		setVisible(true);
 		super.onWindowFocusChanged(hasFocus);
 	}
 
@@ -72,6 +86,9 @@ public class OverlayCallscreen extends Activity {
 	}
 
 	private void shutdown() {
+		if (thread != null) {
+			thread.interrupt();
+		}
 		setVisible(false);
 		stopService(new Intent(this, ManagerService.class));
 		finish();

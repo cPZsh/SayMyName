@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="org.mailboxer.saymyname" android:versionCode="72"
-	android:versionName="2.2.6.8 (ALPHA-BETA-GAMMA, pause music, mute screen fixed, translations, fixes, new contacts-system, new speaker-system, speech-delay, fix ringtones, hide donate, fix gmail, new icon)">
+	package="org.mailboxer.saymyname" android:versionCode="76"
+	android:versionName="2.2.6.9.3 (ALPHA-BETA-GAMMA)">
 
 	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
 	<uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -21,14 +21,13 @@
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
+		
+		<activity android:name="org.mailboxer.saymyname.activity.ProgressActivity"
+			android:label="Progress" />
 
 		<activity android:name="org.mailboxer.saymyname.activity.OverlayCallscreen"
 			android:label="@string/app_name" android:theme="@android:style/Theme.Translucent.NoTitleBar"
-			android:launchMode="singleInstance">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
-			</intent-filter>
-		</activity>
+			android:launchMode="singleInstance" />
 
 		<activity android:name="org.mailboxer.saymyname.activity.ContactChooser"
 			android:label="@string/app_name">
