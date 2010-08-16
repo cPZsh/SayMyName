@@ -23,6 +23,7 @@ public class Settings {
 	private final int emailSpeechDelay;
 	private final boolean emailReadSubject;
 	private final String emailFormat;
+	private final boolean emailReadOnlyMyContacts;
 
 	private final boolean readUnknown;
 	private final boolean readNumber;
@@ -78,6 +79,7 @@ public class Settings {
 		emailReadSubject = preferences.getBoolean("emailReadSubject", false);
 		emailReadDelay = Integer.valueOf(preferences.getString("emailReadDelay", "2")) * 1000;
 		emailSpeechDelay = Integer.valueOf(preferences.getString("emailSpeechDelay", "0")) * 1000;
+		emailReadOnlyMyContacts = preferences.getBoolean("emailReadOnlyMyContacts", false);
 
 		ringtoneIndex = preferences.getInt("selectedRingtoneIndex", -42);
 	}
@@ -188,5 +190,9 @@ public class Settings {
 
 	public int getSmsSpeechDelay() {
 		return smsSpeechDelay;
+	}
+
+	public boolean isEmailReadOnlyMyContacts() {
+		return emailReadOnlyMyContacts;
 	}
 }

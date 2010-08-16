@@ -104,6 +104,9 @@
 
 	<string name="preference_emailReadSubject_title">Read email subject</string>
 	<string name="preference_emailReadSubject_summary">Read the email subject</string>
+	
+	<string name="preference_emailReadOnlyMyContacts_summary">Read mail if and only if the sender is listed in contacts</string>
+    <string name="preference_emailReadOnlyMyContacts_title">Read only my Contacts</string>
 
 
 	<string name="preference_trouble_title">Troubleshooting</string>

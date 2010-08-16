@@ -28,7 +28,29 @@ public class CupcakeContact extends Contact {
 
 			if (cur.moveToFirst()) {
 				name = cur.getString(nameIndex);
-				type = cur.getString(typeIndex);
+
+				switch (Integer.parseInt(cur.getString(typeIndex))) {
+					case PhonesColumns.TYPE_MOBILE:
+						type = "Mobile";
+						break;
+
+					case PhonesColumns.TYPE_HOME:
+						type = "Home";
+						break;
+
+					case PhonesColumns.TYPE_WORK:
+						type = "Work";
+						break;
+
+					case PhonesColumns.TYPE_PAGER:
+						type = "Pager";
+						break;
+
+					default:
+						// maybe a custom type
+						type = "";
+						break;
+				}
 			} else {
 				name = UNKNOWN;
 			}
@@ -53,7 +75,29 @@ public class CupcakeContact extends Contact {
 
 			if (cur.moveToFirst()) {
 				name = cur.getString(nameIndex);
-				type = cur.getString(typeIndex);
+
+				switch (Integer.parseInt(cur.getString(typeIndex))) {
+					case PhonesColumns.TYPE_MOBILE:
+						type = "Mobile";
+						break;
+
+					case PhonesColumns.TYPE_HOME:
+						type = "Home";
+						break;
+
+					case PhonesColumns.TYPE_WORK:
+						type = "Work";
+						break;
+
+					case PhonesColumns.TYPE_PAGER:
+						type = "Pager";
+						break;
+
+					default:
+						// maybe a custom type
+						type = "";
+						break;
+				}
 
 				if (name == null) {
 					name = UNKNOWN;

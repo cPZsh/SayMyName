@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.provider.ContactsContract.PhoneLookup;
 import android.provider.ContactsContract.CommonDataKinds.Email;
+import android.provider.ContactsContract.CommonDataKinds.Phone;
 
 public class EclairContact extends Contact {
 	public EclairContact(final Context context, final Settings settings, final String incomingNumber) {
@@ -24,7 +25,25 @@ public class EclairContact extends Contact {
 
 			if (cur.moveToFirst()) {
 				name = cur.getString(nameIndex);
-				type = cur.getString(typeIndex);
+
+				switch (Integer.parseInt(cur.getString(typeIndex))) {
+					case Phone.TYPE_MOBILE:
+						type = "Mobile";
+						break;
+
+					case Phone.TYPE_HOME:
+						type = "Home";
+						break;
+
+					case Phone.TYPE_WORK:
+						type = "Work";
+						break;
+
+					default:
+						// maybe a custom type
+						type = "";
+						break;
+				}
 			} else {
 				name = UNKNOWN;
 			}
@@ -53,7 +72,28 @@ public class EclairContact extends Contact {
 					name = UNKNOWN;
 				}
 
-				type = cur.getString(typeIndex);
+				switch (Integer.parseInt(cur.getString(typeIndex))) {
+					case Email.TYPE_MOBILE:
+						type = "Mobile";
+						break;
+
+					case Email.TYPE_HOME:
+						type = "Home";
+						break;
+
+					case Email.TYPE_WORK:
+						type = "Work";
+						break;
+
+					case Email.TYPE_OTHER:
+						type = "Other";
+						break;
+
+					default:
+						// maybe a custom type
+						type = "";
+						break;
+				}
 			} else {
 				name = UNKNOWN;
 			}

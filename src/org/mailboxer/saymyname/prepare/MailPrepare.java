@@ -20,6 +20,8 @@ public class MailPrepare extends Prepare {
 		String name = contact.getName();
 		if ("".equals(name)) {
 			return new String[] {DELAY + "0", ""};
+		} else if (name.equals(Contact.UNKNOWN) && settings.isEmailReadOnlyMyContacts()) {
+			return new String[] {DELAY + "0", ""};
 		}
 
 		final String type = contact.getType();
@@ -27,8 +29,9 @@ public class MailPrepare extends Prepare {
 		final Formatter format = new Formatter(name, settings);
 		name = format.format();
 
-		name = settings.getEMailFormat().replaceFirst("%", name);
-		// name = settings.getCallerFormat().replaceFirst("&", type);
+		String text = settings.getEMailFormat();
+		text = text.replaceFirst("%", name);
+		text = text.replaceFirst("&", type);
 
 		if (settings.isEMailReadSubject()) {
 			queue = new String[4];

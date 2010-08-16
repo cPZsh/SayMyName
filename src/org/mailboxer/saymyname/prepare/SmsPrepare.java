@@ -26,8 +26,9 @@ public class SmsPrepare extends Prepare {
 		final Formatter format = new Formatter(name, settings);
 		name = format.format();
 
-		name = settings.getSmsFormat().replaceFirst("%", name);
-		// name = settings.getCallerFormat().replaceFirst("&", type);
+		String text = settings.getSmsFormat();
+		text = text.replaceFirst("%", name);
+		text = text.replaceFirst("&", type);
 
 		if (settings.isSmsRead()) {
 			queue = new String[4];

@@ -34,7 +34,7 @@ public class CallPrepare extends Prepare {
 
 		String text = settings.getCallerFormat();
 		text = text.replaceFirst("%", name);
-		// text = text.replaceFirst("&", type);
+		text = text.replaceFirst("&", type);
 
 		final int repeat = settings.getCallerRepeatTimes();
 		if (settings.getRingtoneIndex() >= 0) {
