@@ -1,5 +1,6 @@
 package org.mailboxer.saymyname.tts;
 
+import org.mailboxer.saymyname.activity.OverlayCallscreen;
 import org.mailboxer.saymyname.prepare.Prepare;
 import org.mailboxer.saymyname.service.ManagerService;
 import org.mailboxer.saymyname.utils.RingtoneTimer;
@@ -8,6 +9,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
+import at.bartinger.phonestate.listener.PhoneState;
+import at.bartinger.phonestate.listener.PhoneState.PhoneStateListener;
 
 import com.google.tts.TTS;
 import com.google.tts.TTSEngine;
@@ -19,6 +22,7 @@ public class Speaker {
 	private final Context context;
 	private final RingtoneTimer timer;
 	private final String[] queue;
+	private final PhoneState phoneState;
 
 	public Speaker(final ManagerService service, final String[] queue, final RingtoneTimer timer, final boolean discreet) {
 		new Thread() {
@@ -40,6 +44,25 @@ public class Speaker {
 		context = service;
 		this.queue = queue;
 		this.timer = timer;
+
+		phoneState = new PhoneState(context, new PhoneStateListener() {
+			@Override
+			public void onDisplayDown() {
+				context.stopService(new Intent(context, ManagerService.class));
+			}
+
+			@Override
+			public void onDisplayUp() {}
+
+			@Override
+			public void onRandomMotion(final boolean isScreenOn) {}
+
+			@Override
+			public void onScreenOff() {}
+
+			@Override
+			public void onScreenOn() {}
+		});
 	}
 
 	public void start() {
@@ -70,7 +93,19 @@ public class Speaker {
 	}
 
 	public void speak(final String text) {
-		speaker.speak(text, 0, null);
+		final Intent overlayIntent = new Intent(context, OverlayCallscreen.class);
+		overlayIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		overlayIntent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+		overlayIntent.addFlags(65536); // Intent.FLAG_ACTIVITY_NO_ANIMATION
+		overlayIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+		overlayIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
+		// overlayIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+		context.startActivity(overlayIntent);
+
+		if (speaker != null) {
+			speaker.speak(text, 0, null);
+		}
 	}
 
 	public void stop() {
@@ -83,6 +118,10 @@ public class Speaker {
 		if (speaker != null) {
 			speaker.stop();
 			speaker.shutdown();
+		}
+
+		if (phoneState != null) {
+			phoneState.stopAccelerometer();
 		}
 	}
 }

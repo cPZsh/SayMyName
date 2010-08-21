@@ -33,16 +33,6 @@ public class CallReceiver extends BroadcastReceiver {
 			// intent.getStringExtra(TelephonyManager.EXTRA_INCOMING_NUMBER));
 			serviceIntent.putExtra(Prepare.CALL, intent.getExtras());
 			context.startService(serviceIntent);
-
-			final Intent overlayIntent = new Intent(context, OverlayCallscreen.class);
-			overlayIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-			overlayIntent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
-			overlayIntent.addFlags(65536); // Intent.FLAG_ACTIVITY_NO_ANIMATION
-			overlayIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-			overlayIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-
-			// overlayIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-			context.startActivity(overlayIntent);
 		} else if (newState.equals(TelephonyManager.EXTRA_STATE_OFFHOOK)) {
 			onCall = true;
 			shutdown();

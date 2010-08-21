@@ -26,9 +26,12 @@ public final class R {
         public static final int imageButton=0x7f09000b;
         public static final int layout=0x7f090009;
         public static final int locale_ellipsizing_title_text=0x7f090008;
+        public static final int menu_about=0x7f090011;
+        public static final int menu_donate=0x7f090012;
         public static final int menu_dontsave=0x7f09000e;
         public static final int menu_help=0x7f09000d;
         public static final int menu_save=0x7f09000f;
+        public static final int menu_share=0x7f090010;
         public static final int row_display_name=0x7f090003;
         public static final int row_ringtone=0x7f090001;
         public static final int row_starred=0x7f090002;
@@ -50,6 +53,7 @@ public final class R {
     }
     public static final class menu {
         public static final int locale_menu=0x7f080000;
+        public static final int saymyname_menu=0x7f080001;
     }
     public static final class raw {
         public static final int silent=0x7f050000;

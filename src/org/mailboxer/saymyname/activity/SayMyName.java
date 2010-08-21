@@ -18,6 +18,8 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceClickListener;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 public class SayMyName extends PreferenceActivity {
@@ -91,7 +93,7 @@ public class SayMyName extends PreferenceActivity {
 
 		screen.findPreference("trouble").setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			public boolean onPreferenceClick(final Preference preference) {
-				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://code.google.com/p/roadtoadc/wiki/HelpHelpHelp")));
+				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://code.google.com/p/roadtoadc/wiki/Troubleshooting")));
 
 				return false;
 			}
@@ -123,7 +125,7 @@ public class SayMyName extends PreferenceActivity {
 
 		screen.findPreference("donate").setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			public boolean onPreferenceClick(final Preference preference) {
-				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.appbrain.com/app/org.mailboxer.saymyname.donate?install")));
+				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://code.google.com/p/roadtoadc/wiki/Donate")));
 
 				return false;
 			}
@@ -240,6 +242,52 @@ public class SayMyName extends PreferenceActivity {
 				((CheckBoxPreference) screen.findPreference("ringtone")).setChecked(false);
 			}
 		}
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(final Menu menu) {
+		super.onCreateOptionsMenu(menu);
+
+		getMenuInflater().inflate(R.menu.saymyname_menu, menu);
+
+		return true;
+	}
+
+	@Override
+	public boolean onMenuItemSelected(final int featureId, final MenuItem item) {
+		switch (item.getItemId()) {
+			case R.id.menu_donate: {
+				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://code.google.com/p/roadtoadc/wiki/Donate")));
+				return true;
+			}
+
+			case R.id.menu_about: {
+				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com/profiles/tomtasche?hl=de#about")));
+				return true;
+			}
+
+			case R.id.menu_help: {
+				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://code.google.com/p/roadtoadc/wiki/Troubleshooting")));
+				return true;
+			}
+
+			case R.id.menu_share: {
+				final Intent shareIntent = new Intent(Intent.ACTION_SEND);
+				// shareIntent.putExtra(Intent.EXTRA_TEXT,
+				// "http://bit.ly/SMNDessert");
+				shareIntent.putExtra(Intent.EXTRA_TEXT, "http://www.appbrain.com/app/org.mailboxer.saymyname");
+				shareIntent.setType("text/plain");
+				shareIntent.addCategory(Intent.CATEGORY_DEFAULT);
+				// startActivity(shareIntent);
+				startActivity(Intent.createChooser(shareIntent, "sending mail"));
+
+				return true;
+			}
+
+			default: {}
+		}
+
+		return super.onMenuItemSelected(featureId, item);
 	}
 
 	@Override

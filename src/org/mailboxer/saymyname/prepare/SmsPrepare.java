@@ -4,6 +4,7 @@ import org.mailboxer.saymyname.contact.Contact;
 import org.mailboxer.saymyname.utils.Formatter;
 import org.mailboxer.saymyname.utils.Settings;
 import org.mailboxer.saymyname.utils.Sms;
+import org.mailboxer.saymyname.utils.Transliterator;
 
 import android.os.Bundle;
 
@@ -35,7 +36,11 @@ public class SmsPrepare extends Prepare {
 			queue[0] = DELAY + settings.getSmsSpeechDelay();
 			queue[1] = name;
 			queue[2] = DELAY + settings.getSmsReadDelay();
-			queue[3] = message;
+			if (settings.isTransliterate()) {
+				queue[3] = Transliterator.transliterate(message);
+			} else {
+				queue[3] = message;
+			}
 		} else {
 			queue = new String[2];
 			queue[0] = DELAY + settings.getSmsSpeechDelay();
